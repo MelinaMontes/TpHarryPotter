@@ -1,6 +1,6 @@
 package app;
 
-public class Wizard extends Personaje {
+public class Wizard extends Personaje implements IHaceMagia {
      public int energiaMagica;
      public Escoba escoba;
      public Poder poderInicial;
