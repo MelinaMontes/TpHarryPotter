@@ -1,4 +1,6 @@
-package app;
+package app.personajes;
+import app.IHaceMagia;
+import app.artefactos.Artefacto;
 
 public class Wizard extends Personaje implements IHaceMagia {
      public int energiaMagica;
@@ -8,6 +10,8 @@ public class Wizard extends Personaje implements IHaceMagia {
      public List<Hechizo> hechizos = new ArrayList<>(); 
 
 
-     public boolean magoOscuro();
-     return true;
+     public boolean magoOscuro(){
+         
+     
+     }
 }

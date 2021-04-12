@@ -1,4 +1,4 @@
-package app;
+package app.personajes;
 
 public class Personaje {
     
@@ -7,7 +7,11 @@ public class Personaje {
     public int edad;
 
     public boolean estaVivo(){
-        return true;
+        if (salud > 0){
+            return true;
+       }
+       return false;
+  
         
     }
 

@@ -1,4 +1,5 @@
 package app;
+import app.artefactos.Artefacto;
 
 public interface IHaceMagia {
      int getEnergiaMagica();
@@ -7,7 +8,7 @@ public interface IHaceMagia {
      void setPoder();
      Artefacto getArtefacto();
      void aprender(Hechizo);
-     void atacar (//no se bien que hay que poner aca);
-     void atacar (//ni aca);
+     void atacar(//no se bien que hay que poner aca);
+     void atacar(//ni aca);
 
 }
