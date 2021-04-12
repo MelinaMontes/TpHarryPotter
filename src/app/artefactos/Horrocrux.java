@@ -1,5 +1,5 @@
 package app.artefactos;
 
-public class Horrocrux {
+public class Horrocrux extends Artefacto {
     
 }
