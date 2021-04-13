@@ -1,5 +1,4 @@
-package app;
-import app.poder.Poder;
+package app.poderes;
 
 public class Invisibilidad extends Poder{
     

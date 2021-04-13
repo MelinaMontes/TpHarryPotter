@@ -1,7 +1,7 @@
-package app.poder.hechizos;
+package app.poderes.hechizos;
 import java.util.List;
+import app.poderes.*;
 import java.util.ArrayList;
-import app.poder.*;
 
 
 public class HechizoCuracion extends Hechizo {

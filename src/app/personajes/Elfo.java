@@ -2,9 +2,9 @@ package app.personajes;
 import java.util.ArrayList;
 import java.util.List;
 import app.IHaceMagia;
-import app.poder.Poder;
-import app.poder.hechizos.Hechizo;
 import app.artefactos.Artefacto;
+import app.poderes.Poder;
+import app.poderes.hechizos.Hechizo;
 
 public class Elfo extends Criatura  implements IHaceMagia{
     private int energiaMagica;

@@ -1,7 +1,6 @@
 package app;
 import app.artefactos.Artefacto;
-import app.poder.Poder;
-import app.poder.hechizos.Hechizo;
+import app.poderes.Poder;
 
 public interface IHaceMagia {
      int getEnergiaMagica();

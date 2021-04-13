@@ -1,4 +1,4 @@
-package app.poder.hechizos;
+package app.poderes.hechizos;
 import java.util.ArrayList;
 import java.util.List;
 import app.personajes.Personaje;

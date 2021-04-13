@@ -1,4 +1,4 @@
-package app.poder;
+package app.poderes;
 
 public class Poder {
     private String nombre;

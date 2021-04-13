@@ -1,10 +1,10 @@
 package app.artefactos;
-import app.poder.Poder;
+import app.poderes.Poder;
 public class Artefacto {
 
-    public String nombre;
-    public double amplificadorDeDanio;
-    public double amplificadorDeCuracion;
-    public Poder poder;
+    private String nombre;
+    private double amplificadorDeDanio;
+    private double amplificadorDeCuracion;
+    private Poder poder;
 
 }
