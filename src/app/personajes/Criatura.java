@@ -3,7 +3,7 @@ package app.personajes;
 import app.IEsMagico;
 
 public class Criatura extends Personaje implements IEsMagico {
-    public String nombre;
+    private String nombre;
 
     @Override
     public boolean esInvisibleAMuggles() {

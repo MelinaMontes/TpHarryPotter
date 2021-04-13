@@ -1,3 +1,4 @@
+package app.poder.hechizos;
 public class Hechizo extends Poder {
     
     private boolean esOscuro;

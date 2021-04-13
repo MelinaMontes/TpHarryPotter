@@ -1,12 +1,16 @@
 package app.personajes;
+import java.util.ArrayList;
+import java.util.List;
 import app.IHaceMagia;
-import app.Poder;
+import app.poder.Poder;
+import app.poder.hechizos.Hechizo;
 import app.artefactos.Artefacto;
 
 public class Elfo extends Criatura  implements IHaceMagia{
-    public int energiaMagica;
-    public Artefacto artefacto;
-    public List<Hechizo> hechizos = new ArrayList<>();
+    private int energiaMagica;
+    private Artefacto artefacto;
+    private List<Hechizo> hechizos = new ArrayList<>();
+
     @Override
     public int getEnergiaMagica() {
         // TODO Auto-generated method stub

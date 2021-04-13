@@ -1,19 +1,20 @@
 package app.personajes;
+import java.util.ArrayList;
+import java.util.List;
 import app.IHaceMagia;
-import app.Poder;
+import app.poder.Poder;
+import app.poder.hechizos.Hechizo;
 import app.artefactos.Artefacto;
 
 public class Wizard extends Personaje implements IHaceMagia {
-     public int energiaMagica;
-     public Escoba escoba;
-     public Poder poderInicial;
-     public Artefacto artefacto;
-     public List<Hechizo> hechizos = new ArrayList<>(); 
-
+     private int energiaMagica;
+     private Escoba escoba;
+     private Poder poderInicial;
+     private Artefacto artefacto;
+     private List<Hechizo> hechizos = new ArrayList<>(); 
 
      public boolean magoOscuro(){
          
-     
      }
 
 
