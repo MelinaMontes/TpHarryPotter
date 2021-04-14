@@ -1,6 +1,6 @@
 package app.artefactos;
 import app.poderes.Poder;
-public class Artefacto {
+public abstract class Artefacto {
 
     private String nombre;
     private double amplificadorDeDanio;

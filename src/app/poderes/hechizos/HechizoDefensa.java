@@ -6,6 +6,10 @@ import app.poderes.Poder;
 
 public class HechizoDefensa extends Hechizo {
 
+    public HechizoDefensa(int nivelDanio, int nivelCuracion) {
+        super(nivelDanio, nivelCuracion);
+        //TODO Auto-generated constructor stub
+    }
     // atributo que especifica contra que se puede usar 
     private List<Poder> poderesQueDefiende = new ArrayList();
 
