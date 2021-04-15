@@ -1,17 +1,14 @@
 package app.poderes.hechizos;
-import java.util.ArrayList;
-import java.util.List;
-import app.personajes.Personaje;
+import app.personajes.*;
+import java.util.*;
 
+public abstract class HechizoAtaque extends Hechizo {
 
-public class HechizoAtaque extends Hechizo {
-
-    public HechizoAtaque (int nivelDanio, int nivelCuracion) {
-        super(nivelDanio, nivelCuracion);
+    public HechizoAtaque (int energiaMagica, int nivelDanio) {
+        super(energiaMagica, nivelDanio);
     }
-
-    // un atributo que diga a quien puede atacar 
-    private List<Personaje> personajesQueAtaca = new ArrayList<>();
+ 
+    private List<Personaje> personajesQueAtaca;
 
     public List<Personaje> getPersonajesQueAtaca() {
         return this.personajesQueAtaca;
@@ -19,5 +16,6 @@ public class HechizoAtaque extends Hechizo {
     public void setPersonajesQueAtaca(List<Personaje> personajesQueAtaca) {
         this.personajesQueAtaca = personajesQueAtaca;
     }
+    
 
 }

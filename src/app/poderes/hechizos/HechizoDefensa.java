@@ -1,15 +1,16 @@
 package app.poderes.hechizos;
-import java.util.ArrayList;
-import java.util.List;
-import app.poderes.Poder;
+import app.poderes.*;
+import java.util.*;
 
+public abstract class HechizoDefensa extends Hechizo {
 
-public class HechizoDefensa extends Hechizo {
+    public HechizoDefensa (int energiaMagica, int nivelDanio) {
+        super(energiaMagica, nivelDanio);
+    }
+    
+    private List<Poder> poderesQueDefiende;
 
-    // atributo que especifica contra que se puede usar 
-    private List<Poder> poderesQueDefiende = new ArrayList();
-
-    public Poder List<Poder>getPoderesQueDefiende() {
+    public List<Poder> getPoderesQueDefiende() {
         return this.poderesQueDefiende;
     }
     public void setPoderesQueDefiende(List<Poder> poderesQueDefiende) {

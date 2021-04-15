@@ -1,13 +1,14 @@
 package app.poderes.hechizos;
-import java.util.List;
 import app.poderes.*;
-import java.util.ArrayList;
+import java.util.*;
 
-
-public class HechizoCuracion extends Hechizo {
+public abstract class HechizoCuracion extends Hechizo {
     
-    // que cure algo especifico
-    private List<Poder> poderesQueCura = new ArrayList();
+    public HechizoCuracion (int energiaMagica, int nivelDanio) {
+        super(energiaMagica, nivelDanio);
+    }
+    
+    private List<Poder> poderesQueCura;
 
     public List<Poder> getPoderesQueCura() {
         return this.poderesQueCura;
