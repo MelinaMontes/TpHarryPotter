@@ -8,7 +8,6 @@ public abstract class Hechizo extends Poder {
     private int nivelDanio;
     private int nivelCuracion = 0;
     private int energiaMagica;
-    private int energiaMagicaMinima;
 
     public Hechizo(int energiaMagica, int nivelDanio) {
         this.energiaMagica = energiaMagica;
@@ -41,13 +40,6 @@ public abstract class Hechizo extends Poder {
     }
     public void setEnergiaMagica(int energiaMagica) {
         this.energiaMagica = energiaMagica;
-    }
-
-    public int getEnergiaMagicaMinima() {
-        return this.energiaMagica;
-    }
-    public void setEnergiaMagicaMinima(int energiaMagicaMinima) {
-        this.energiaMagicaMinima = energiaMagicaMinima;
     }
 
 }
