@@ -5,6 +5,7 @@ import app.IHaceMagia;
 import app.artefactos.Artefacto;
 import app.poderes.Poder;
 import app.poderes.hechizos.Hechizo;
+import app.transportes.Escoba;
 
 public class Wizard extends Personaje implements IHaceMagia {
      private int energiaMagica;
@@ -14,7 +15,7 @@ public class Wizard extends Personaje implements IHaceMagia {
      private List<Hechizo> hechizos = new ArrayList<>(); 
 
      public boolean magoOscuro(){
-         
+         return true;
      }
 
 
