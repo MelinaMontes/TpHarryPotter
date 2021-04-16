@@ -10,7 +10,7 @@ public abstract class Poder {
     private String descripcion;
 
     // Agrego constructor de 2 parametros
-
+   
     public Poder(String nombre, String descripcion) {
         this.nombre = nombre;
         this.descripcion = descripcion;

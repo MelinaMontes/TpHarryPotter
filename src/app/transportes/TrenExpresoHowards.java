@@ -2,7 +2,7 @@ package app.transportes;
 
 import app.IEsMagico;
 
-public class TrenExpresoHowards implements IEsMagico {
+public class TrenExpresoHowards extends Transporte implements IEsMagico {
 
     @Override
     public boolean esInvisibleAMuggles() {
