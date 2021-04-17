@@ -4,23 +4,24 @@ import app.IEsMagico;
 
 public abstract class Transporte implements IEsMagico {
 
-      public String nombreTransporte;
+      private String nombre;
 
-      public Transporte(){
 
+      public void setNombre(String nombre) {
+            this.nombre = nombre;
       }
 
-      public Transporte(String nombreTransporte){
-            this.nombre = nombreTransporte;
+      public String getNombre() {
+            return this.nombre;
       }
 
       @Override
-      public boolean esInvisible(){
+      public boolean esInvisible() {
             return false;
       }
 
       @Override
-      public boolean es InvisibleAMuggles(){
+      public boolean esInvisibleAMuggles() {
             return false;
 
       }

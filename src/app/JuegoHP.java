@@ -6,14 +6,15 @@ import app.poderes.Poder;
 import app.poderes.hechizos.*;
 
 public class JuegoHP {
-    public void inicializarJuego(){
 
-    public List<Personaje> personajes = new ArrayList<>();
+    public void inicializarJuego() {
+
+        public List<Personaje> personajes = new ArrayList<>();
 
     Wizard bellatrix = new Wizard();
-    bellatrix setNombre("Bellatrix");
-    bellatrix setSalud(100);
-    bellatrix setEdad(90);
+    bellatrix.setNombre("Bellatrix");
+    bellatrix.setSalud(100);
+    bellatrix.setEdad(90);
 
 
     public List<Hechizo> hechizosPersonaje = new ArrayList<>();
@@ -105,5 +106,6 @@ public class JuegoHP {
     public void empezarJuego() {
 
     }
-}
+    }
+
 

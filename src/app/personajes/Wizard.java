@@ -5,6 +5,7 @@ import app.artefactos.Artefacto;
 import app.poderes.*;
 import app.poderes.hechizos.Hechizo;
 import app.transportes.Escoba;
+import app.IHaceMagia;
 
 public class Wizard extends Personaje implements IHaceMagia {
      private int energiaMagica = 150;
