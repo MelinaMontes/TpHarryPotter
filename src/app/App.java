@@ -1,5 +1,4 @@
 package app;
-
 import java.util.Scanner;
 
 public class App {
@@ -19,6 +18,8 @@ public class App {
         System.out.println("  **     ** **   **   **    ***  **    ***    **            **            ****      **       **      ********  **     ***");
         System.out.println("  ***    ***                                                ***                                                          ");
        
+        System.out.println("");
+        System.out.println("¡Preparen sus varitas!");
 
     }
 }

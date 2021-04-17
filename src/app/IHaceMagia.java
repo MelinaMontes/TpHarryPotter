@@ -8,8 +8,8 @@ public interface IHaceMagia {
      Poder getPoderInicial();
      void setPoder();
      Artefacto getArtefacto();
-     void aprender(Hechizo);
-     void atacar(//no se bien que hay que poner aca);
-     void atacar(//ni aca);
+     void aprender(Hechizo h);
+     void atacar(Personaje personaje,Hechizo hechizo);
+     void atacar(Personaje personaje,String hechizo);
 
 }

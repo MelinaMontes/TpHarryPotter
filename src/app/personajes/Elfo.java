@@ -7,7 +7,7 @@ import app.poderes.Poder;
 import app.poderes.hechizos.Hechizo;
 
 public class Elfo extends Criatura  implements IHaceMagia{
-    private int energiaMagica;
+    private int energiaMagica = 150;
     private Artefacto artefacto;
     private List<Hechizo> hechizos = new ArrayList<>();
 
