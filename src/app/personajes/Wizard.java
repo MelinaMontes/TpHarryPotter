@@ -1,14 +1,13 @@
 package app.personajes;
-import java.util.ArrayList;
-import java.util.List;
-import app.IHaceMagia;
+import java.util.*;
+import app.*;
 import app.artefactos.Artefacto;
-import app.poderes.Poder;
+import app.poderes.*;
 import app.poderes.hechizos.Hechizo;
 import app.transportes.Escoba;
 
 public class Wizard extends Personaje implements IHaceMagia {
-     private int energiaMagica;
+     private int energiaMagica = 150;
      private Escoba escoba;
      private Poder poderInicial;
      private Artefacto artefacto;

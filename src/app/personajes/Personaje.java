@@ -3,7 +3,7 @@ package app.personajes;
 public abstract class Personaje {
     
     private String nombre;
-    private int salud;
+    private int salud = 100;
     private int edad;
 
     public boolean estaVivo(){

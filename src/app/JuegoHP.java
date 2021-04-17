@@ -1,13 +1,20 @@
 package app;
-
 import java.util.*;
-
 import app.personajes.*;
 import app.poderes.*;
 import app.poderes.Poder;
 import app.poderes.hechizos.*;
 
 public class JuegoHP {
+    public void inicializarJuego(){
+
+    public List<Personaje> personajes = new ArrayList<>();
+
+    Wizard bellatrix = new Wizard();
+    bellatrix setNombre("Bellatrix");
+    bellatrix setSalud(100);
+    bellatrix setEdad(90);
+
 
     public List<Hechizo> hechizosPersonaje = new ArrayList<>();
     // hechizos base(wingardium,sectumsempra,vulnerasanentur,cavelnimicum)
@@ -88,12 +95,15 @@ public class JuegoHP {
         Poder metamorfosis = new Metamorfosis("Metamorfosis", "Puede cambiar de forma");
         Poder invisibilidad = new Invisibilidad("Invisibilidad", "Nadie puede verlo");
         Poder parseTongue = new ParseTongue("Parsel Tongue", "Puede hablar con Serpientes");
-        //Poder hechizo = new Hechizo("Hechizo", "Habilidad para hechizar");
+        Poder hechizo = new Hechizo("Hechizo", "Habilidad para hechizar");
 
     }
+
+   
+    
 
     public void empezarJuego() {
 
     }
-
 }
+
