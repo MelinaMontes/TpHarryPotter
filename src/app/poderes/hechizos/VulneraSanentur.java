@@ -2,8 +2,8 @@ package app.poderes.hechizos;
 
 public class VulneraSanentur extends HechizoCuracion {
 
-    public VulneraSanentur(int energiaMagica, int nivelDanio) {
-        super(energiaMagica, nivelDanio);
+    public VulneraSanentur(String nombre, String descripcion) {
+        super(nombre, descripcion);
     }
     
 }

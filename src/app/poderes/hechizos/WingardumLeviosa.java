@@ -2,8 +2,8 @@ package app.poderes.hechizos;
 
 public class WingardumLeviosa extends HechizoOcio {
 
-    public WingardumLeviosa(int energiaMagica, int nivelDanio) {
-        super(energiaMagica, nivelDanio);
+    public WingardumLeviosa(String nombre, String descripcion) {
+        super(nombre, descripcion);
     }
     
 }

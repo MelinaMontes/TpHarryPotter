@@ -9,11 +9,16 @@ public abstract class Hechizo extends Poder {
     private int nivelCuracion = 0;
     private int energiaMagica;
 
-    public Hechizo(int energiaMagica, int nivelDanio) {
+    public Hechizo(String nombre, String descripcion) {
+        super(nombre, descripcion);
+       
+    }
+
+    public void energiaYDanio(int energiaMagica, int nivelDanio) {
         this.energiaMagica = energiaMagica;
         this.nivelDanio = nivelDanio;
     }
-
+    
     public boolean getEsOscuro() {
         return this.esOscuro;
     }

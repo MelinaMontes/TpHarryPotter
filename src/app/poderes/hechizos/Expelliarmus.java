@@ -2,8 +2,8 @@ package app.poderes.hechizos;
 
 public class Expelliarmus extends HechizoAtaque {
 
-    public Expelliarmus(int energiaMagica, int nivelDanio) {
-        super(energiaMagica, nivelDanio);
+    public Expelliarmus(String nombre, String descripcion) {
+        super(nombre, descripcion);
     }
     
 }

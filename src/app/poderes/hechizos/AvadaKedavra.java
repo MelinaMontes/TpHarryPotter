@@ -2,8 +2,8 @@ package app.poderes.hechizos;
 
 public class AvadaKedavra extends HechizoAtaque {
 
-    public AvadaKedavra(int energiaMagica, int nivelDanio) {
-        super(energiaMagica, nivelDanio);
+    public AvadaKedavra(String nombre, String descripcion) {
+        super(nombre, descripcion);
     }
     
 }

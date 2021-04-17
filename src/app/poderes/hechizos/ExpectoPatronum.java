@@ -2,8 +2,8 @@ package app.poderes.hechizos;
 
 public class ExpectoPatronum extends HechizoDefensa {
 
-    public ExpectoPatronum(int energiaMagica, int nivelDanio) {
-        super(energiaMagica, nivelDanio);
+    public ExpectoPatronum(String nombre, String descripcion) {
+        super(nombre, descripcion);
     }
     
 }

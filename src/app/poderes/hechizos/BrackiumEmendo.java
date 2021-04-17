@@ -2,8 +2,8 @@ package app.poderes.hechizos;
 
 public class BrackiumEmendo extends HechizoCuracion {
 
-    public BrackiumEmendo(int energiaMagica, int nivelDanio) {
-        super(energiaMagica, nivelDanio);
+    public BrackiumEmendo(String nombre, String descripcion) {
+        super(nombre, descripcion);
     }
     
 }

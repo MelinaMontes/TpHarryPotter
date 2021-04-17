@@ -8,7 +8,6 @@ public abstract class Poder {
 
     private String nombre;
     private String descripcion;
-    private int energiaMagicaMinima;
 
     // Agrego constructor de 2 parametros
    
@@ -32,14 +31,6 @@ public abstract class Poder {
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
 
-    }
-
-    public int getEnergiaMagicaMinima() {
-        return this.energiaMagicaMinima;
-    }
-
-    public void setEnergiaMagicaMinima(int energiaMagicaMinima) {
-        this.energiaMagicaMinima = energiaMagicaMinima;
     }
 
 }
