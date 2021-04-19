@@ -45,39 +45,63 @@ public class App {
         final String avatarElegido = "El avatar elegido es ";
 
         switch(avatar1){
-            case 1: System.out.println(avatarElegido + 1);
-            break;
-            case 2: System.out.println(avatarElegido + 2);
-            break;
-            case 3: System.out.println(avatarElegido + 3);
-            break;
-            case 4: System.out.println(avatarElegido + 4);
-            break;
-            case 5: System.out.println(avatarElegido + 5);
-            break;
-            case 6: System.out.println(avatarElegido + 6);
-            break;
+            case 1: System.out.println(avatarElegido + "Harry");
+                break;
+                case 2: System.out.println(avatarElegido + "Voldemort");
+                break;
+                case 3: System.out.println(avatarElegido + "Hermione");
+                break;
+                case 4: System.out.println(avatarElegido + "Bellatrix");
+                break;
+                case 5: System.out.println(avatarElegido + "Dobby");
+                break;
+                case 6: System.out.println(avatarElegido + "Kreacher");
+                break;
         }
 
         System.out.println("Jugador 2, seleccione avatar: '1' Harry, '2' Voldemort, '3' Hermione, '4' Bellatrix, '5' Dobby, '6' Kreacher"); //aca irian las opciones a elegir, dependiendo de los personajes instanciados
         int avatar2 = Teclado.nextInt();
-
         switch(avatar2){
-            case 1: System.out.println(avatarElegido + 1);
+            case 1: System.out.println(avatarElegido + "Harry");
             break;
-            case 2: System.out.println(avatarElegido + 2);
+            case 2: System.out.println(avatarElegido + "Voldemort");
             break;
-            case 3: System.out.println(avatarElegido + 3);
+            case 3: System.out.println(avatarElegido + "Hermione");
             break;
-            case 4: System.out.println(avatarElegido + 4);
+            case 4: System.out.println(avatarElegido + "Bellatrix");
             break;
-            case 5: System.out.println(avatarElegido + 5);
+            case 5: System.out.println(avatarElegido + "Dobby");
             break;
-            case 6: System.out.println(avatarElegido + 6);
+            case 6: System.out.println(avatarElegido + "Kreacher");
             break;
         }
 
+        if( avatar1 == avatar2){
+            System.out.println("Elija otro personaje. Seleccione avatar: '1' Harry, '2' Voldemort, '3' Hermione, '4' Bellatrix, '5' Dobby, '6' Kreacher");
+            int avatar2bis = Teclado.nextInt();
+            switch(avatar2bis){
+                case 1: System.out.println(avatarElegido + "Harry");
+                break;
+                case 2: System.out.println(avatarElegido + "Voldemort");
+                break;
+                case 3: System.out.println(avatarElegido + "Hermione");
+                break;
+                case 4: System.out.println(avatarElegido + "Bellatrix");
+                break;
+                case 5: System.out.println(avatarElegido + "Dobby");
+                break;
+                case 6: System.out.println(avatarElegido + "Kreacher");
+                break;
 
-    }
+        }
+        
+
+    
+        
+
+    }  
 }
+}
+
+
         
