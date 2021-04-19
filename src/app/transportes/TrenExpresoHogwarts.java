@@ -1,8 +1,6 @@
 package app.transportes;
 
-import app.IEsMagico;
-
-public class TrenExpresoHogwarts extends Transporte implements IEsMagico {
+public class TrenExpresoHogwarts extends Transporte {
 
     @Override
     public boolean esInvisibleAMuggles() {
