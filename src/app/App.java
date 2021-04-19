@@ -33,6 +33,37 @@ public class App {
         System.out.println(ANSI_BLUE+  "-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_Preparen  sus  varitas_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-"+ANSI_RESET);
 
       
+        System.out.println("Jugador 1, seleccione avatar: '1' Harry, '2' Ron, '3' Hermione, '4' Bellatrix, "); //aca irian las opciones a elegir, dependiendo de los personajes instanciados
+        int avatar1 = Teclado.nextInt();
+
+        final String avatarElegido = "El avatar elegido es ";
+
+        switch(avatar1){
+            case 1: System.out.println(avatarElegido + 1);
+            break;
+            case 2: System.out.println(avatarElegido + 2);
+            break;
+            case 3: System.out.println(avatarElegido + 3);
+            break;
+            case 4: System.out.println(avatarElegido + 4);
+            break;
+        }
+
+        System.out.println("Jugador 1, seleccione avatar: '1' Harry, '2' Ron, '3' Hermione, '4' Bellatrix, "); //aca irian las opciones a elegir, dependiendo de los personajes instanciados
+        int avatar2 = Teclado.nextInt();
+
+        switch(avatar2){
+            case 1: System.out.println(avatarElegido + 1);
+            break;
+            case 2: System.out.println(avatarElegido + 2);
+            break;
+            case 3: System.out.println(avatarElegido + 3);
+            break;
+            case 4: System.out.println(avatarElegido + 4);
+            break;
+        }
+
+
     }
 }
         
