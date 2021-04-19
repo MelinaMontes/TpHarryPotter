@@ -20,7 +20,9 @@ public class App {
     public static void main (String[] args) throws Exception{
         
         //Añadimos una leyenda de bienvenida que se imprime en pantalla
-
+        System.out.println();
+        System.out.println();
+        
         System.out.println(ANSI_PURPLE+"****     **                                               **********                                                     "+ANSI_RESET);
         System.out.println(ANSI_PURPLE+"  **     **   ***    ******     ******     ***      ***     **      **    ****   ******** ********  ********  ******     "+ANSI_RESET);
         System.out.println(ANSI_PURPLE+"  **     **  ** **    **   ***   **   ***    **    **       **       **  **  **     **       **      **        **   ***  "+ANSI_RESET);
@@ -30,9 +32,14 @@ public class App {
         System.out.println(ANSI_PURPLE+"  **     ** **   **   **    ***  **    ***    **            **            ****      **       **      ********  **     ***"+ANSI_RESET);
         System.out.println(ANSI_PURPLE+"  ***    ***                                                ***                                                          "+ANSI_RESET);
        
+        System.out.println();
+        System.out.println();
+
         System.out.println(ANSI_BLUE+  "-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_Preparen  sus  varitas_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-"+ANSI_RESET);
 
-      
+        System.out.println();
+        System.out.println();
+
         System.out.println("Jugador 1, seleccione avatar: '1' Harry, '2' Ron, '3' Hermione, '4' Bellatrix, "); //aca irian las opciones a elegir, dependiendo de los personajes instanciados
         int avatar1 = Teclado.nextInt();
 
