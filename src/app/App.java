@@ -33,7 +33,7 @@ public class App {
         System.out.println(ANSI_BLUE+  "-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_Preparen  sus  varitas_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-"+ANSI_RESET);
 
       
-        System.out.println("Jugador 1, seleccione avatar: '1' Harry, '2' Ron, '3' Hermione, '4' Bellatrix, "); //aca irian las opciones a elegir, dependiendo de los personajes instanciados
+        System.out.println("Jugador 1, seleccione avatar: '1' Harry, '2' Voldemort, '3' Hermione, '4' Bellatrix, '5' Dobby, '6' Kreacher"); //aca irian las opciones a elegir, dependiendo de los personajes instanciados
         int avatar1 = Teclado.nextInt();
 
         final String avatarElegido = "El avatar elegido es ";
@@ -47,9 +47,13 @@ public class App {
             break;
             case 4: System.out.println(avatarElegido + 4);
             break;
+            case 5: System.out.println(avatarElegido + 5);
+            break;
+            case 6: System.out.println(avatarElegido + 6);
+            break;
         }
 
-        System.out.println("Jugador 1, seleccione avatar: '1' Harry, '2' Ron, '3' Hermione, '4' Bellatrix, "); //aca irian las opciones a elegir, dependiendo de los personajes instanciados
+        System.out.println("Jugador 2, seleccione avatar: '1' Harry, '2' Voldemort, '3' Hermione, '4' Bellatrix, '5' Dobby, '6' Kreacher"); //aca irian las opciones a elegir, dependiendo de los personajes instanciados
         int avatar2 = Teclado.nextInt();
 
         switch(avatar2){
@@ -60,6 +64,10 @@ public class App {
             case 3: System.out.println(avatarElegido + 3);
             break;
             case 4: System.out.println(avatarElegido + 4);
+            break;
+            case 5: System.out.println(avatarElegido + 5);
+            break;
+            case 6: System.out.println(avatarElegido + 6);
             break;
         }
 

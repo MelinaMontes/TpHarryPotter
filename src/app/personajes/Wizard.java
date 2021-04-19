@@ -18,51 +18,51 @@ public class Wizard extends Personaje implements IHaceMagia {
          return true;
      }
 
-
      @Override
      public int getEnergiaMagica() {
-          // TODO Auto-generated method stub
           return 0;
      }
 
-
-     @Override
+     @Override //esto es necesario si ya establecimos arriba que todos los wizard tienen energia magica 150??
      public void setEnergiaMagica() {
-          // TODO Auto-generated method stub
-          
+   
      }
-
 
      @Override
      public Poder getPoderInicial() {
-          // TODO Auto-generated method stub
           return null;
      }
-
 
      @Override
      public void setPoder() {
-          // TODO Auto-generated method stub
-          
+              
      }
-
 
      @Override
      public Artefacto getArtefacto() {
-          // TODO Auto-generated method stub
           return null;
+     }
+     public void setArtefacto(){
+
      }
 
 
      @Override
-     public void aprender() {
+     public void aprender(Hechizo h) {
           // TODO Auto-generated method stub
           
      }
 
 
      @Override
-     public void atacar() {
+     public void atacar(Personaje personaje, Hechizo hechizo) {
+          // TODO Auto-generated method stub
+          
+     }
+
+
+     @Override
+     public void atacar(Personaje personaje, String hechizo) {
           // TODO Auto-generated method stub
           
      }
