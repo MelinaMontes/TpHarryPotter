@@ -42,8 +42,8 @@ public class Wizard extends Personaje implements IHaceMagia {
      public Artefacto getArtefacto() {
           return null;
      }
-     public void setArtefacto(){
-
+     public Artefacto setArtefacto(Artefacto artefacto){//ver si esto esta bien
+         return artefacto;
      }
 
 

@@ -1,5 +1,8 @@
 package app;
 import java.util.Scanner;
+import app.personajes.Personaje;
+import app.JuegoHP;
+import app.personajes.Wizard;
 
 public class App {
 
@@ -37,27 +40,31 @@ public class App {
 
         System.out.println(ANSI_BLUE+  "-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_Preparen  sus  varitas_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-"+ANSI_RESET);
 
-      
+        
+        JuegoHP juego = new juegoHp();
+
         System.out.println("Jugador 1, seleccione avatar: '1' Harry, '2' Voldemort, '3' Hermione, '4' Bellatrix, '5' Dobby, '6' Kreacher"); //aca irian las opciones a elegir, dependiendo de los personajes instanciados
 
         int avatar1 = Teclado.nextInt();
 
+
         final String avatarElegido = "El avatar elegido es ";
 
+        int avatar1 = Teclado.nextInt();
         switch(avatar1){
             case 1: System.out.println(avatarElegido + "Harry");
-                break;
-                case 2: System.out.println(avatarElegido + "Voldemort");
-                break;
-                case 3: System.out.println(avatarElegido + "Hermione");
-                break;
-                case 4: System.out.println(avatarElegido + "Bellatrix");
-                break;
-                case 5: System.out.println(avatarElegido + "Dobby");
-                break;
-                case 6: System.out.println(avatarElegido + "Kreacher");
-                break;
-        }
+            break;
+            case 2: System.out.println(avatarElegido + "Voldemort");
+            break;
+            case 3: System.out.println(avatarElegido + "Hermione");
+            break;
+            case 4: System.out.println(avatarElegido + "Bellatrix");
+            break;
+            case 5: System.out.println(avatarElegido + "Dobby");
+            break;
+            case 6: System.out.println(avatarElegido + "Kreacher");
+            break;
+            
 
         System.out.println("Jugador 2, seleccione avatar: '1' Harry, '2' Voldemort, '3' Hermione, '4' Bellatrix, '5' Dobby, '6' Kreacher"); //aca irian las opciones a elegir, dependiendo de los personajes instanciados
         int avatar2 = Teclado.nextInt();
@@ -96,7 +103,7 @@ public class App {
         }
         
 
-    
+         
         
 
     }  

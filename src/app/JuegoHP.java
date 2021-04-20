@@ -16,7 +16,7 @@ public class JuegoHP {
         Poder metamorfosis = new Metamorfosis("Metamorfosis", "Puede cambiar de forma");
         Poder invisibilidad = new Invisibilidad("Invisibilidad", "Nadie puede verlo");
         Poder parseTongue = new ParseTongue("Parsel Tongue", "Puede hablar con Serpientes");
-        Poder hechizo = new Hechizo("Hechizo", "Habilidad para hechizar");
+        
 
         SectumSempra ss = new SectumSempra("Sectum Sempra", "Potente Hechizo de Ataque");
         ss.energiaYDanio(35, 40);
@@ -67,9 +67,9 @@ public class JuegoHP {
 
         Artefacto varitaMagica = new Varita();
         varitaMagica.setNombre("Varita Magica");
-        varitaMagica.setAmplificadorDeDanio(100);
-        varitaMagica.setAmplificadorDeCuracion(50);
-        varitaMagica.setPoder(hechizo); //no se bien que va aca, es de tipo poder
+        varitaMagica.setAmplificadorDeDanio(1);
+        varitaMagica.setAmplificadorDeCuracion(0.5);
+        //varitaMagica.setPoder(hechizo); //no se bien que va aca, es de tipo poder
 
         Transporte escobaHarry = new Escoba();
         escobaHarry.setNombre("Saeta de Fuego");
@@ -84,7 +84,8 @@ public class JuegoHP {
         bellatrix.aprender(avada);
         bellatrix.aprender(brack);
         bellatrix.aprender(crucio);
-        bellatrix.atacar();
+        //bellatrix.atacar();
+        bellatrix.setNumeroDePersonaje(1);
 
         Wizard harry = new Wizard();
         harry.setNombre("Harry");
@@ -96,7 +97,8 @@ public class JuegoHP {
         harry.aprender(ss);
         harry.aprender(exp);
         harry.aprender(cavel);
-        harry.atacar();
+        //harry.atacar();
+        harry.setNumeroDePersonaje(2);
 
         Wizard voldemort = new Wizard();
         voldemort.setNombre("Voldemort");
@@ -108,7 +110,8 @@ public class JuegoHP {
         voldemort.aprender(brack);
         voldemort.aprender(crucio);
         voldemort.aprender(avada);
-        voldemort.atacar();
+        //voldemort.atacar();
+        voldemort.setNumeroDePersonaje(3);
 
         Wizard hermione = new Wizard();
         hermione.setNombre("Harry");
@@ -119,19 +122,22 @@ public class JuegoHP {
         hermione.aprender(cavel);
         hermione.aprender(wing);
         hermione.aprender(accio);
-        hermione.atacar();//no se que va aca
+        //hermione.atacar();//no se que va aca
+        hermione.setNumeroDePersonaje(4);
 
         Elfo dobby = new Elfo();
         dobby.setNombre("Dobby");
         dobby.setEnergiaMagica();
-        dobby.setSalud(100);
+        dobby.setSalud(80);
         dobby.atacar();
+        dobby.setNumeroDePersonaje(5);
         
         Elfo kreacher = new Elfo();
         kreacher.setNombre("Kreacher");
         kreacher.setEnergiaMagica();
-        kreacher.setSalud(100);
+        kreacher.setSalud(80);
         kreacher.atacar();
+        kreacher.setNumeroDePersonaje(6);
 
 
        // public static void agregarPoderes() {
@@ -144,13 +150,16 @@ public class JuegoHP {
             //Poder parseTongue = new ParseTongue("Parsel Tongue", "Puede hablar con Serpientes");
             //Poder hechizo = new Hechizo("Hechizo", "Habilidad para hechizar");
     
-        }
+        
+        
         
        
-
-    public void empezarJuego() { //esto hace falta si ya inicializamos el juego antes???
-
+        
+            
+        }
+        
     }
+    
 }
 
 

@@ -5,6 +5,11 @@ public abstract class Personaje {
     private String nombre;
     private int salud = 100;
     private int edad;
+    private int numeroDePersonaje;
+
+    public Personaje elegirAvatar(Personaje wizard){
+        return wizard;
+    }
 
     public boolean estaVivo(){
         if (salud > 0){
@@ -31,7 +36,9 @@ public abstract class Personaje {
     public void setEdad(int edad) {
         this.edad = edad;
     } 
-
+    public void setNumeroDePersonaje(int numeroDePersonaje){
+        this.numeroDePersonaje = numeroDePersonaje;
+    }
 
 } 
 
