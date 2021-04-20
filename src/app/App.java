@@ -40,6 +40,8 @@ public class App {
 
         System.out.println(ANSI_BLUE+  "-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_Preparen  sus  varitas_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-"+ANSI_RESET);
 
+        System.out.println();
+        System.out.println();
         
         JuegoHP juego = new juegoHp();
 
