@@ -3,7 +3,10 @@ import java.util.*;
 import app.artefactos.*;
 import app.personajes.*;
 import app.poderes.*;
-import app.poderes.hechizos.*;
+import app.poderes.hechizos.HechizoAtaque.*;
+import app.poderes.hechizos.HechizoDefensa.*;
+import app.poderes.hechizos.HechizoOcio.*;
+import app.poderes.hechizos.HechizoCuracion.*;
 import app.transportes.*;
 
 public class JuegoHP {
@@ -85,15 +88,46 @@ public class JuegoHP {
             //Poder invisibilidad = new Invisibilidad("Invisibilidad", "Nadie puede verlo");
             //Poder parseTongue = new ParseTongue("Parsel Tongue", "Puede hablar con Serpientes");
             //Poder hechizo = new Hechizo("Hechizo", "Habilidad para hechizar");
-    
-        
-        
-        
-       
         
             
-        }
+       
         
+    }
+
+    public void comenzarJuego() {
+
+        this.inicializarJuego();
+
+       Personaje avatar1 = new Personaje();
+       Personaje avatar2 = new Personaje();
+
+        this.listarPersonajes();
+        avatar1 = this.elegirJugador();
+        avatar2 = this.elegirJugador();
+        System.out.println("\n");
+    }
+
+    // Va en comenzarJuego
+    public void listarPersonajes(){
+        //Listar personajes
+        System.out.println("Personajes: ");
+        for (Personaje personaje : this.personajes) {
+            System.out.println("# " + personaje.getNombre());
+        }
+        System.out.println("Elegir personajes diferentes");
+        System.out.println("\n");
+    }
+
+    // Va en comenzarJuego
+    public Personaje elegirJugador() {
+        System.out.println("Ingrese el nombre del jugador elegido: ");
+        String nombre = Teclado.nextLine();
+        for (Personaje personaje : this.personajes) {
+            if (personaje.getNombre().equals(nombre)){
+                return personaje;
+            }
+        }
+        return null;
     }
     
 }
