@@ -1,4 +1,4 @@
-package app.poderes.hechizos;
+package poderes.hechizos;
 
 import app.poderes.Poder;
 
@@ -6,7 +6,7 @@ public class Hechizo extends Poder {
     
     private boolean esOscuro;
     private int nivelDanio;
-    private int nivelCuracion = 0;
+    private int nivelCuracion;
     private int energiaMagica;
 
     public Hechizo(String nombre, String descripcion) {
