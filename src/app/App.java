@@ -47,39 +47,29 @@ public class App {
 
         System.out.println("Jugador 1, seleccione avatar: '1' Harry, '2' Voldemort, '3' Hermione, '4' Bellatrix, '5' Dobby, '6' Kreacher"); //aca irian las opciones a elegir, dependiendo de los personajes instanciados
         int avatar1 = Teclado.nextInt();
-        
-        if(avatar1<=4){
-            Wizard jugador1 = new Wizard(avatar1);
-        }
-        else{
-            Elfo jugador1 = new Elfo(avatar1);
-        }
 
-        Personaje jugador1;
+        Personaje jugador1 = generarWizardYElfo(avatar1);
         System.out.println(avatarElegido + jugador1.getNombre());
  
         //elije personaje2 sin repetir 
         int avatar2;
+        Personaje jugador2;
+        
         while(true){
             System.out.println("Jugador 2, seleccione avatar: '1' Harry, '2' Voldemort, '3' Hermione, '4' Bellatrix, '5' Dobby, '6' Kreacher"); //aca irian las opciones a elegir, dependiendo de los personajes instanciados
             avatar2 = Teclado.nextInt();
 
             if((avatar1 != avatar2)){
-                if(avatar2<=4){
-                    Wizard jugador2 = new Wizard(avatar2);
-                }
-                else{
-                    Elfo jugador2 = new Elfo(avatar2);
-                }
+                jugador2 = generarWizardYElfo(avatar2);
                 break;
             }
-            else
-                System.out.println("elija otro personaje...");
+            else {  
+                System.out.println("Elija otro personaje...");
+            }
         }
         
-        Personaje jugador2;
-        System.out.println(avatarElegido + jugador2.getNombre());
-  
+        System.out.println(jugador1.getNombre() + " " + jugador.getNombre());
+    }
 
       /*  System.out.println(" Hora de la batalla!");
         while (avatar1.getSalud>0 && avatar2.salud>0){
@@ -108,6 +98,6 @@ public class App {
             System.out.println(avatar2.color + avatar2.nombre + " Es el ganador del dia!!");
         */
 
-     }
+     
 
 }
