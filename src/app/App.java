@@ -43,61 +43,44 @@ public class App {
 
         System.out.println("");
 
-        System.out.println("Jugador 1, seleccione avatar: '1' Harry, '2' Voldemort, '3' Hermione, '4' Bellatrix, '5' Dobby, '6' Kreacher"); //aca irian las opciones a elegir, dependiendo de los personajes instanciados
-        int avatar1 = Teclado.nextInt();
         final String avatarElegido = "El avatar elegido es ";
 
-        switch(avatar1){
-            case 1: System.out.println(avatarElegido + "Harry");
-            break;
-            case 2: System.out.println(avatarElegido + "Voldemort");
-            break;
-            case 3: System.out.println(avatarElegido + "Hermione");
-            break;
-            case 4: System.out.println(avatarElegido + "Bellatrix");
-            break;
-            case 5: System.out.println(avatarElegido + "Dobby");
-            break;
-            case 6: System.out.println(avatarElegido + "Kreacher");
-            break;
+        System.out.println("Jugador 1, seleccione avatar: '1' Harry, '2' Voldemort, '3' Hermione, '4' Bellatrix, '5' Dobby, '6' Kreacher"); //aca irian las opciones a elegir, dependiendo de los personajes instanciados
+        int avatar1 = Teclado.nextInt();
+        
+        if(avatar1<=4){
+            Wizard jugador1 = new Wizard(avatar1);
+        }
+        else{
+            Elfo jugador1 = new Elfo(avatar1);
         }
 
-        System.out.println("Jugador 2, seleccione avatar: '1' Harry, '2' Voldemort, '3' Hermione, '4' Bellatrix, '5' Dobby, '6' Kreacher"); //aca irian las opciones a elegir, dependiendo de los personajes instanciados
-        int avatar2 = Teclado.nextInt();
-        switch(avatar2){
-            case 1: System.out.println(avatarElegido + "Harry");
-            break;
-            case 2: System.out.println(avatarElegido + "Voldemort");
-            break;
-            case 3: System.out.println(avatarElegido + "Hermione");
-            break;
-            case 4: System.out.println(avatarElegido + "Bellatrix");
-            break;
-            case 5: System.out.println(avatarElegido + "Dobby");
-            break;
-            case 6: System.out.println(avatarElegido + "Kreacher");
-            break;
-        }
-        if( avatar1 == avatar2){
-            System.out.println("Elija otro personaje. Seleccione avatar: '1' Harry, '2' Voldemort, '3' Hermione, '4' Bellatrix, '5' Dobby, '6' Kreacher");
-            int avatar2bis = Teclado.nextInt();
-            switch(avatar2bis){
-                case 1: System.out.println(avatarElegido + "Harry");
-                break;
-                case 2: System.out.println(avatarElegido + "Voldemort");
-                break;
-                case 3: System.out.println(avatarElegido + "Hermione");
-                break;
-                case 4: System.out.println(avatarElegido + "Bellatrix");
-                break;
-                case 5: System.out.println(avatarElegido + "Dobby");
-                break;
-                case 6: System.out.println(avatarElegido + "Kreacher");
+        Personaje jugador1;
+        System.out.println(avatarElegido + jugador1.getNombre());
+ 
+        //elije personaje2 sin repetir 
+        int avatar2;
+        while(true){
+            System.out.println("Jugador 2, seleccione avatar: '1' Harry, '2' Voldemort, '3' Hermione, '4' Bellatrix, '5' Dobby, '6' Kreacher"); //aca irian las opciones a elegir, dependiendo de los personajes instanciados
+            avatar2 = Teclado.nextInt();
+
+            if((avatar1 != avatar2)){
+                if(avatar2<=4){
+                    Wizard jugador2 = new Wizard(avatar2);
+                }
+                else{
+                    Elfo jugador2 = new Elfo(avatar2);
+                }
                 break;
             }
-
-
+            else
+                System.out.println("elija otro personaje...");
         }
+        
+        Personaje jugador2;
+        System.out.println(avatarElegido + jugador2.getNombre());
+  
+
       /*  System.out.println(" Hora de la batalla!");
         while (avatar1.getSalud>0 && avatar2.salud>0){
             Personaje atacante;
