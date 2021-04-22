@@ -1,4 +1,4 @@
-package app.poderes.hechizos;
+package app.poderes.hechizos.hechizosDefensa;
 
 public class ExpectoPatronum extends HechizoDefensa {
 

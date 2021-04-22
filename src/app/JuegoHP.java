@@ -1,18 +1,24 @@
 package app;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+
 import app.artefactos.*;
 import app.personajes.*;
 import app.poderes.*;
-import app.poderes.hechizos.HechizoAtaque.*;
-import app.poderes.hechizos.HechizoDefensa.*;
-import app.poderes.hechizos.HechizoOcio.*;
-import app.poderes.hechizos.HechizoCuracion.*;
+import app.poderes.hechizos.*;
+import app.poderes.hechizos.hechizosAtaque.*;
+import app.poderes.hechizos.hechizosDefensa.*;
+import app.poderes.hechizos.hechizosCuracion.*;
+import app.poderes.hechizos.hechizosOcio.*;
 import app.transportes.*;
 
 public class JuegoHP {
      
     public List<Personaje> personajes = new ArrayList<>();
     public List<Hechizo> hechizosAprender = new ArrayList<>();
+    public List<Transporte> transportes = new ArrayList<>();
+    public List<Artefacto> artefactos = new ArrayList<>();
+
 
     public void inicializarJuego(){
 
@@ -24,17 +30,21 @@ public class JuegoHP {
         SectumSempra ss = new SectumSempra("Sectum Sempra", "Potente Hechizo de Ataque");
         ss.energiaYDanio(35, 40);
         ss.setEnergiaMagica(40);
+        this.hechizosAprender.add(ss);
          
         Cavelnimicum cavel = new Cavelnimicum("Cavelnimicum", "Potente Hechizo de Curacion");
         cavel.energiaYDanio(30, 10);
         cavel.setNivelCuracion(35);
+        this.hechizosAprender.add(cavel);
    
         VulneraSanentur vulnera = new VulneraSanentur("Vulnera Sanentur", "Hechizo de Curacion");
         vulnera.energiaYDanio(35, 0);
         vulnera.setNivelCuracion(45);
+        this.hechizosAprender.add(vulnera);
    
         WingardumLeviosa wing = new WingardumLeviosa("Wingardium Leviosa", "Hechizo de ocio para elevar objetos");
         wing.energiaYDanio(10, 0);
+        this.hechizosAprender.add(wing);
    
         Crucio crucio = new Crucio("Crucio", "Hechizo Oscuro de Ataque");
         crucio.energiaYDanio(45, 60);
@@ -48,10 +58,6 @@ public class JuegoHP {
         avada.setEsOscuro(true);
         this.hechizosAprender.add(avada);
    
-        Expelliarmus exp = new Expelliarmus("Expelliarmus", "Hechizo de Ataque que permite anular el artefacto del enemigo");
-        exp.energiaYDanio(30, 10);
-        exp.setEnergiaMagica(35);
-        this.hechizosAprender.add(exp);
    
         ExpectoPatronum patronum = new ExpectoPatronum("Expecto Patronum", "Gran Hechizo de Defensa");
         patronum.energiaYDanio(35, 15);
@@ -62,33 +68,17 @@ public class JuegoHP {
         brack.energiaYDanio(35, 0);
         brack.setNivelCuracion(55);
         this.hechizosAprender.add(brack);
-   
-        AccioArtefacto accio = new AccioArtefacto("Accio Artefacto", "Hechizo que permite adquirir un artefacto");
-        accio.energiaYDanio(30, 0);
-        this.hechizosAprender.add(accio);
-
 
         Artefacto varitaMagica = new Varita();
         varitaMagica.setNombre("Varita Magica");
         varitaMagica.setAmplificadorDeDanio(1);
         varitaMagica.setAmplificadorDeCuracion(0.5);
         //varitaMagica.setPoder(hechizo); //no se bien que va aca, es de tipo poder
+        this.artefactos.add(varitaMagica);
 
         Transporte escobaHarry = new Escoba();
         escobaHarry.setNombre("Saeta de Fuego");
-        
-
-
-       // public static void agregarPoderes() {
-   
-            // Hacemos uso del constructor en la clase poder,
-            // dandole valor a los atributos nombre y descripcion de PODER
-    
-            //Poder metamorfosis = new Metamorfosis("Metamorfosis", "Puede cambiar de forma");
-            //Poder invisibilidad = new Invisibilidad("Invisibilidad", "Nadie puede verlo");
-            //Poder parseTongue = new ParseTongue("Parsel Tongue", "Puede hablar con Serpientes");
-            //Poder hechizo = new Hechizo("Hechizo", "Habilidad para hechizar");
-        
+        this.transportes.add(escobaHarry);
             
        
         
@@ -96,124 +86,122 @@ public class JuegoHP {
 
 
     public Personaje generarWizardYElfo (int numeroDePersonaje){
-        Wizard mago;
-        Elfo elfo;
+       this.inicializarJuego();
+        Wizard mago = new Wizard();
+        Elfo elfo = new Elfo();
         switch(numeroDePersonaje) {       
              case 1:
-               mago = new Wizard();
 
               mago.setNombre("Harry");
               mago.setSalud(100);
               mago.setEdad(17);
-              mago.setEnergiaMagica();
-              mago.setArtefacto(varitaMagica); 
+             /* mago.setArtefacto(); 
               mago.setTransporte (escobathis);
               mago.aprender(ss);
               mago.aprender(exp);
-              mago.aprender(cavel);
+              mago.aprender(cavel); */
+              mago.hechizos.addAll(hechizosAprender);
                 //this.atacar();
-                mago.setNumeroDePersonaje(2);
+              mago.setNumeroDePersonaje(2);
              return mago;
     
              case 2:
-                this.setNombre("Voldemort");
-                this.setSalud(100);
-                this.setEdad(90);
-                this.setEnergiaMagica();
-                this.setArtefacto(varitaMagica); 
-                this.magoOscuro();
-                this.aprender(brack);
-                this.aprender(crucio);
-                this.aprender(avada);
+             mago.setNombre("Voldemort");
+             mago.setSalud(100);
+             mago.setEdad(90);
+            /* mago.setEnergiaMagica();
+             mago.setArtefacto(varitaMagica); 
+             mago.magoOscuro();
+             mago.aprender(brack);
+             mago.aprender(crucio);
+             mago.aprender(avada); */
+             mago.hechizos.addAll(hechizosAprender);
                 //this.atacar();
-                this.setNumeroDePersonaje(3);
-             break;
+                mago.setNumeroDePersonaje(3);
+                return mago;
 
              case 3:
-                this.setNombre("Hermione");
-                this.setSalud(100);
-                this.setEdad(17);
-                this.setEnergiaMagica();
-                this.setArtefacto(varitaMagica);
-                this.aprender(cavel);
-                this.aprender(wing);
-                this.aprender(accio);
+             mago.setNombre("Hermione");
+             mago.setSalud(100);
+             mago.setEdad(17);
+            /* mago.setEnergiaMagica();
+             mago.setArtefacto(varitaMagica);
+             mago.aprender(cavel);
+             mago.aprender(wing);
+             mago.aprender(accio); */
+             mago.hechizos.addAll(hechizosAprender);
                 //this.atacar();//no se que va aca
-                this.setNumeroDePersonaje(4);
-             break;
+                mago.setNumeroDePersonaje(4);
+                return mago;
+            
 
              case 4:
-             this.setNombre("Bellatrix");
-             this.setSalud(100);
-             this.setEdad(40);
-             this.setEnergiaMagica();
-             this.setArtefacto(varitaMagica); 
-             this.magoOscuro();
-             this.aprender(avada);
-             this.aprender(brack);
-             this.aprender(crucio);
+             mago.setNombre("Bellatrix");
+             mago.setSalud(100);
+             mago.setEdad(40);
+             /*mago.setEnergiaMagica();
+             mago.setArtefacto(varitaMagica); 
+             mago.magoOscuro();
+             mago.aprender(avada);
+             mago.aprender(brack);
+             mago.aprender(crucio); */
              //this.atacar();
-             this.setNumeroDePersonaje(1);
-             break;
+             mago.hechizos.addAll(hechizosAprender);
+             mago.setNumeroDePersonaje(1);
+             return mago;
 
              case 5:
-             this.setNombre("Dobby");
-             this.setEnergiaMagica();
-             this.setSalud(80);
-             this.atacar();
-             this.setNumeroDePersonaje(5);
-             break;
+             elfo.setNombre("Dobby");
+            //elfo.setEnergiaMagica();
+             elfo.setSalud(80);
+             //elfo.atacar(); 
+             elfo.hechizos.addAll(hechizosAprender);
+             elfo.setNumeroDePersonaje(5);
+             return elfo;
           
              case 6:
-             this.setNombre("Kreacher");
-             this.setEnergiaMagica();
-             this.setSalud(80);
-             this.atacar();
-             this.setNumeroDePersonaje(6);
-             break;
+             elfo.setNombre("Kreacher");
+             //elfo.setEnergiaMagica();
+             elfo.setSalud(80);
+            // elfo.atacar();
+             elfo.setNumeroDePersonaje(6);
+             elfo.hechizos.addAll(hechizosAprender);
+             return elfo;
 
              default:
-             break;
+             return null;
 
              }
-   }
-/*
-    public void comenzarJuego() {
-
-        this.inicializarJuego();
-
-       Personaje avatar1 = new Personaje();
-       Personaje avatar2 = new Personaje();
-
-        this.listarPersonajes();
-        avatar1 = this.elegirJugador();
-        avatar2 = this.elegirJugador();
-        System.out.println("\n");
+    
     }
 
-    // Va en comenzarJuego
-    public void listarPersonajes(){
-        //Listar personajes
-        System.out.println("Personajes: ");
-        for (Personaje personaje : this.personajes) {
-            System.out.println("# " + personaje.getNombre());
+    public void turnoJugador(Personaje atacante, Personaje oponente) {
+           Hechizo h = this.hechizoRandom(atacante);
+           atacante.setSalud(atacante.getSalud() + h.getNivelCuracion());
+           oponente.setSalud(oponente.getSalud() - h.getNivelDanio());
+    }
+
+    public Hechizo hechizoRandom(Personaje atacante){
+
+        int max;
+        int min = 1;
+        if (atacante instanceof Wizard) {
+           Wizard wizard = (Wizard) atacante;
+           max = wizard.hechizos.size();
+           int random = (int) (Math.random() * ((max - min) + 1)) + min;
+           return wizard.hechizos.get(random - 1);
         }
-        System.out.println("Elegir personajes diferentes");
-        System.out.println("\n");
+        else if (atacante instanceof Elfo) {
+           Elfo elfo = (Elfo) atacante;
+           max = elfo.hechizos.size();
+           int random = (int) (Math.random() * ((max - min) + 1)) + min;
+           return elfo.hechizos.get(random - 1);
+        }     
+        return null;  
     }
 
-    // Va en comenzarJuego
-    public Personaje elegirJugador() {
-        System.out.println("Ingrese el nombre del jugador elegido: ");
-        String nombre = Teclado.nextLine();
-        for (Personaje personaje : this.personajes) {
-            if (personaje.getNombre().equals(nombre)){
-                return personaje;
-            }
-        }
-        return null;
-    }
-    */
+
+
 }
 
 

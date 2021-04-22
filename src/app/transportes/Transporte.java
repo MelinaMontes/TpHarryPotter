@@ -1,6 +1,6 @@
 package app.transportes;
 
-import app.IEsMagico;
+import app.interfaces.IEsMagico;
 
 public abstract class Transporte implements IEsMagico {
 

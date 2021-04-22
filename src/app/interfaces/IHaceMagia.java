@@ -1,4 +1,4 @@
-package app;
+package app.interfaces;
 
 import app.artefactos.Artefacto;
 import app.poderes.Poder;

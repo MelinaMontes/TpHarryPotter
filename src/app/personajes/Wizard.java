@@ -5,14 +5,14 @@ import app.artefactos.Artefacto;
 import app.poderes.*;
 import app.poderes.hechizos.Hechizo;
 import app.transportes.Escoba;
-import app.IHaceMagia;
+import app.interfaces.IHaceMagia;
 
 public class Wizard extends Personaje implements IHaceMagia {
      private int energiaMagica = 150;
      private Escoba escoba;
      private Poder poderInicial;
      private Artefacto artefacto;
-     private List<Hechizo> hechizos = new ArrayList<>(); 
+     public List<Hechizo> hechizos = new ArrayList<>(); 
 
      public boolean magoOscuro(){
          return true;
@@ -24,7 +24,7 @@ public class Wizard extends Personaje implements IHaceMagia {
      }
 
      @Override //esto es necesario si ya establecimos arriba que todos los wizard tienen energia magica 150??
-     public void setEnergiaMagica() {
+     public void setEnergiaMagica(int energiaMagica) {
    
      }
 
@@ -33,10 +33,7 @@ public class Wizard extends Personaje implements IHaceMagia {
           return null;
      }
 
-     @Override
-     public void setPoder() {
-              
-     }
+    
 
      @Override
      public Artefacto getArtefacto() {
@@ -49,7 +46,7 @@ public class Wizard extends Personaje implements IHaceMagia {
 
      @Override
      public void aprender(Hechizo h) {
-          // TODO Auto-generated method stub
+          this.hechizos.add(h);
           
      }
 
@@ -63,6 +60,12 @@ public class Wizard extends Personaje implements IHaceMagia {
 
      @Override
      public void atacar(Personaje personaje, String hechizo) {
+          // TODO Auto-generated method stub
+          
+     }
+
+     @Override
+     public void setPoderInicial(Poder poderInicial) {
           // TODO Auto-generated method stub
           
      }

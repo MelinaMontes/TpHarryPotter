@@ -1,5 +1,6 @@
-package app.poderes.hechizos;
+package app.poderes.hechizos.hechizosCuracion;
 
+import app.poderes.hechizos.Hechizo;
 
 public abstract class HechizoCuracion extends Hechizo {
     

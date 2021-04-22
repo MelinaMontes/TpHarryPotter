@@ -1,4 +1,6 @@
 package app.personajes;
+import app.poderes.hechizos.*;
+import java.util.*;
 
 public abstract class Personaje {
     

@@ -1,6 +1,8 @@
 package app;
 
 import java.util.Scanner;
+
+import app.personajes.Elfo;
 import app.personajes.Personaje;
 import app.JuegoHP;
 import app.personajes.Wizard;
@@ -43,12 +45,14 @@ public class App {
 
         System.out.println("");
 
+        JuegoHP juego = new JuegoHP();
+
         final String avatarElegido = "El avatar elegido es ";
 
         System.out.println("Jugador 1, seleccione avatar: '1' Harry, '2' Voldemort, '3' Hermione, '4' Bellatrix, '5' Dobby, '6' Kreacher"); //aca irian las opciones a elegir, dependiendo de los personajes instanciados
         int avatar1 = Teclado.nextInt();
 
-        Personaje jugador1 = generarWizardYElfo(avatar1);
+        Personaje jugador1 = juego.generarWizardYElfo(avatar1);
         System.out.println(avatarElegido + jugador1.getNombre());
  
         //elije personaje2 sin repetir 
@@ -60,15 +64,52 @@ public class App {
             avatar2 = Teclado.nextInt();
 
             if((avatar1 != avatar2)){
-                jugador2 = generarWizardYElfo(avatar2);
+                jugador2 = juego.generarWizardYElfo(avatar2);
+                System.out.println(avatarElegido + jugador2.getNombre());
                 break;
             }
             else {  
                 System.out.println("Elija otro personaje...");
             }
+            
         }
         
-        System.out.println(jugador1.getNombre() + " " + jugador.getNombre());
+        //Para ver si selecciono bien los personajes
+       // System.out.println(jugador1.getNombre() + " " + jugador2.getNombre());
+
+       System.out.println(" Hora de la batalla!");
+
+       while (jugador1.getSalud()>0 && jugador2.getSalud()>0){
+        Personaje atacante;
+        Personaje oponente;
+       
+           boolean turnoJugador1 = true;
+
+           if (turnoJugador1){    
+              atacante=jugador1;
+              oponente=jugador2;
+            }
+           else { 
+             atacante=jugador2;
+             oponente=jugador1;
+            }
+
+           juego.turnoJugador(atacante, oponente);
+        
+           System.out.println(/*atacante.color + */ atacante.getNombre() + "ataca a " + oponente.getNombre());
+           System.out.println(" A "+oponente.getNombre()+ "le queda"+ oponente.getSalud()+"de salud!" );
+
+           Thread.sleep(1000);
+           turnoJugador1=!turnoJugador1;
+        }
+        if (jugador1.getSalud() > 0){
+         System.out.println(/*jugador1.color +*/ jugador1.getNombre() + " Ha ganado esta batalla!!");
+        }
+        else{
+         System.out.println(/*jugador2.color + */ jugador2.getNombre() + " Es el ganador del dia!!");
+        }
+
+        
     }
 
       /*  System.out.println(" Hora de la batalla!");
