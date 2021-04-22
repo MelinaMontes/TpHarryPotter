@@ -178,6 +178,9 @@ public class JuegoHP {
     public void turnoJugador(Personaje atacante, Personaje oponente) {
            Hechizo h = this.hechizoRandom(atacante);
            atacante.setSalud(atacante.getSalud() + h.getNivelCuracion());
+           if(atacante.getSalud()>100) {
+               atacante.setSalud(100);
+           }
            oponente.setSalud(oponente.getSalud() - h.getNivelDanio());
     }
 

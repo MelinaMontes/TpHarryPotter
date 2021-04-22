@@ -78,12 +78,11 @@ public class App {
        // System.out.println(jugador1.getNombre() + " " + jugador2.getNombre());
 
        System.out.println(" Hora de la batalla!");
+       boolean turnoJugador1 = true;
 
        while (jugador1.getSalud()>0 && jugador2.getSalud()>0){
-        Personaje atacante;
-        Personaje oponente;
-       
-           boolean turnoJugador1 = true;
+         Personaje atacante;
+         Personaje oponente;
 
            if (turnoJugador1){    
               atacante=jugador1;
@@ -96,11 +95,11 @@ public class App {
 
            juego.turnoJugador(atacante, oponente);
         
-           System.out.println(/*atacante.color + */ atacante.getNombre() + "ataca a " + oponente.getNombre());
-           System.out.println(" A "+oponente.getNombre()+ "le queda"+ oponente.getSalud()+"de salud!" );
+           System.out.println(/*atacante.color + */ atacante.getNombre() + " ataca a " + oponente.getNombre());
+           System.out.println(" A "+ oponente.getNombre() + " le queda "+ oponente.getSalud()+" de salud!" );
 
            Thread.sleep(1000);
-           turnoJugador1=!turnoJugador1;
+           turnoJugador1 = !turnoJugador1;
         }
         if (jugador1.getSalud() > 0){
          System.out.println(/*jugador1.color +*/ jugador1.getNombre() + " Ha ganado esta batalla!!");
