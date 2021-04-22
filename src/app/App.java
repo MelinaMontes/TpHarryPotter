@@ -95,17 +95,20 @@ public class App {
                 case 6: System.out.println(avatarElegido + "Kreacher");
                 break;
             }
-
-
         }
-      /*  System.out.println(" Hora de la batalla!");
+
+            
+
+
+        
+        /*System.out.println(" Hora de la batalla!");
         while (avatar1.getSalud>0 && avatar2.salud>0){
             Personaje atacante;
             Personaje Oponente;
 
             if (turnoAvatar1){
                 atacante=avatar1;
-                oponente=avatar2;
+                Oponente=avatar2;
             }
             int max 10;
             int min=0;
@@ -128,3 +131,5 @@ public class App {
      }
 
 }
+}
+
