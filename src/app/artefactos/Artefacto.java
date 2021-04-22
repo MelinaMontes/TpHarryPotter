@@ -23,7 +23,7 @@ public abstract class Artefacto {
         this.amplificadorDeDanio = amplificadorDeDanio;
     }
 
-    public double getAmplificadorDeCuracion()) {
+    public double getAmplificadorDeCuracion() {
         return this.amplificadorDeCuracion;
     }
 

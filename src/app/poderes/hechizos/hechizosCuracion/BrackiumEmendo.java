@@ -1,4 +1,4 @@
-package app.poderes.hechizos;
+package app.poderes.hechizos.hechizosCuracion;
 
 public class BrackiumEmendo extends HechizoCuracion {
 

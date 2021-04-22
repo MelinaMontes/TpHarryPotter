@@ -1,6 +1,8 @@
 package app;
 
 import java.util.Scanner;
+
+import app.personajes.Elfo;
 import app.personajes.Personaje;
 import app.JuegoHP;
 import app.personajes.Wizard;
@@ -43,65 +45,73 @@ public class App {
 
         System.out.println("");
 
-        System.out.println("Jugador 1, seleccione avatar: '1' Harry, '2' Voldemort, '3' Hermione, '4' Bellatrix, '5' Dobby, '6' Kreacher"); //aca irian las opciones a elegir, dependiendo de los personajes instanciados
-        int avatar1 = Teclado.nextInt();
+        JuegoHP juego = new JuegoHP();
+
         final String avatarElegido = "El avatar elegido es ";
 
-        switch(avatar1){
-            case 1: System.out.println(avatarElegido + "Harry");
-            break;
-            case 2: System.out.println(avatarElegido + "Voldemort");
-            break;
-            case 3: System.out.println(avatarElegido + "Hermione");
-            break;
-            case 4: System.out.println(avatarElegido + "Bellatrix");
-            break;
-            case 5: System.out.println(avatarElegido + "Dobby");
-            break;
-            case 6: System.out.println(avatarElegido + "Kreacher");
-            break;
-        }
+        System.out.println("Jugador 1, seleccione avatar: '1' Harry, '2' Voldemort, '3' Hermione, '4' Bellatrix, '5' Dobby, '6' Kreacher"); //aca irian las opciones a elegir, dependiendo de los personajes instanciados
+        int avatar1 = Teclado.nextInt();
 
-        System.out.println("Jugador 2, seleccione avatar: '1' Harry, '2' Voldemort, '3' Hermione, '4' Bellatrix, '5' Dobby, '6' Kreacher"); //aca irian las opciones a elegir, dependiendo de los personajes instanciados
-        int avatar2 = Teclado.nextInt();
-        switch(avatar2){
-            case 1: System.out.println(avatarElegido + "Harry");
-            break;
-            case 2: System.out.println(avatarElegido + "Voldemort");
-            break;
-            case 3: System.out.println(avatarElegido + "Hermione");
-            break;
-            case 4: System.out.println(avatarElegido + "Bellatrix");
-            break;
-            case 5: System.out.println(avatarElegido + "Dobby");
-            break;
-            case 6: System.out.println(avatarElegido + "Kreacher");
-            break;
-        }
-        if( avatar1 == avatar2){
-            System.out.println("Elija otro personaje. Seleccione avatar: '1' Harry, '2' Voldemort, '3' Hermione, '4' Bellatrix, '5' Dobby, '6' Kreacher");
-            int avatar2bis = Teclado.nextInt();
-            switch(avatar2bis){
-                case 1: System.out.println(avatarElegido + "Harry");
-                break;
-                case 2: System.out.println(avatarElegido + "Voldemort");
-                break;
-                case 3: System.out.println(avatarElegido + "Hermione");
-                break;
-                case 4: System.out.println(avatarElegido + "Bellatrix");
-                break;
-                case 5: System.out.println(avatarElegido + "Dobby");
-                break;
-                case 6: System.out.println(avatarElegido + "Kreacher");
+        Personaje jugador1 = juego.generarWizardYElfo(avatar1);
+        System.out.println(avatarElegido + jugador1.getNombre());
+ 
+        //elije personaje2 sin repetir 
+        int avatar2;
+        Personaje jugador2;
+        
+        while(true){
+            System.out.println("Jugador 2, seleccione avatar: '1' Harry, '2' Voldemort, '3' Hermione, '4' Bellatrix, '5' Dobby, '6' Kreacher"); //aca irian las opciones a elegir, dependiendo de los personajes instanciados
+            avatar2 = Teclado.nextInt();
+
+            if((avatar1 != avatar2)){
+                jugador2 = juego.generarWizardYElfo(avatar2);
+                System.out.println(avatarElegido + jugador2.getNombre());
                 break;
             }
+            else {  
+                System.out.println("Elija otro personaje...");
+            }
+            
+        }
+        
+        //Para ver si selecciono bien los personajes
+       // System.out.println(jugador1.getNombre() + " " + jugador2.getNombre());
+
+       System.out.println(" Hora de la batalla!");
+       boolean turnoJugador1 = true;
+
+       while (jugador1.getSalud()>0 && jugador2.getSalud()>0){
+         Personaje atacante;
+         Personaje oponente;
+
+           if (turnoJugador1){    
+              atacante=jugador1;
+              oponente=jugador2;
+            }
+           else { 
+             atacante=jugador2;
+             oponente=jugador1;
+            }
+
+           juego.turnoJugador(atacante, oponente);
+        
+           System.out.println(/*atacante.color + */ atacante.getNombre() + " ataca a " + oponente.getNombre());
+           System.out.println(" A "+ oponente.getNombre() + " le queda "+ oponente.getSalud()+" de salud!" );
+
+           Thread.sleep(1000);
+           turnoJugador1 = !turnoJugador1;
+        }
+        if (jugador1.getSalud() > 0){
+         System.out.println(/*jugador1.color +*/ jugador1.getNombre() + " Ha ganado esta batalla!!");
+        }
+        else{
+         System.out.println(/*jugador2.color + */ jugador2.getNombre() + " Es el ganador del dia!!");
         }
 
-            
-
-
         
-        /*System.out.println(" Hora de la batalla!");
+    }
+
+      /*  System.out.println(" Hora de la batalla!");
         while (avatar1.getSalud>0 && avatar2.salud>0){
             Personaje atacante;
             Personaje Oponente;
@@ -128,7 +138,7 @@ public class App {
             System.out.println(avatar2.color + avatar2.nombre + " Es el ganador del dia!!");
         */
 
-     }
+     
 
 }
 }

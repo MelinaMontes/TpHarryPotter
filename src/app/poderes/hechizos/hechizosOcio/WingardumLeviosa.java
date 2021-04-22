@@ -1,4 +1,4 @@
-package app.poderes.hechizos;
+package app.poderes.hechizos.hechizosOcio;
 
 public class WingardumLeviosa extends HechizoOcio {
 

@@ -1,7 +1,7 @@
 package app.personajes;
 import java.util.ArrayList;
 import java.util.List;
-import app.IHaceMagia;
+import app.interfaces.IHaceMagia;
 import app.artefactos.Artefacto;
 import app.poderes.Poder;
 import app.poderes.hechizos.Hechizo;
@@ -9,7 +9,7 @@ import app.poderes.hechizos.Hechizo;
 public class Elfo extends Criatura  implements IHaceMagia{
     private int energiaMagica = 150;
     private Artefacto artefacto;
-    private List<Hechizo> hechizos = new ArrayList<>();
+    public List<Hechizo> hechizos = new ArrayList<>();
 
     @Override
     public int getEnergiaMagica() {
@@ -17,7 +17,7 @@ public class Elfo extends Criatura  implements IHaceMagia{
         return 0;
     }
     @Override
-    public void setEnergiaMagica() {
+    public void setEnergiaMagica(int energiaMagica) {
         // TODO Auto-generated method stub
         
     }
@@ -26,29 +26,23 @@ public class Elfo extends Criatura  implements IHaceMagia{
         // TODO Auto-generated method stub
         return null;
     }
-    @Override
-    public void setPoder() {
-        // TODO Auto-generated method stub
-        
-    }
+   
     @Override
     public Artefacto getArtefacto() {
         // TODO Auto-generated method stub
         return null;
     }
-    @Override
-    public void aprender() {
-        // TODO Auto-generated method stub
-        
-    }
-    @Override
-    public void atacar() {
-        // TODO Auto-generated method stub
-        
-    }
+
+    public List getHechizos() {
+        return this.hechizos;
+   }
+   public void setHechizos(List<Hechizo> hechizos) {
+        this.hechizos = hechizos;
+   }
+    
     @Override
     public void aprender(Hechizo h) {
-        // TODO Auto-generated method stub
+        this.hechizos.add(h);
         
     }
     @Override
@@ -58,6 +52,12 @@ public class Elfo extends Criatura  implements IHaceMagia{
     }
     @Override
     public void atacar(Personaje personaje, String hechizo) {
+        // TODO Auto-generated method stub
+        
+    }
+  
+    @Override
+    public void setPoderInicial(Poder poderInicial) {
         // TODO Auto-generated method stub
         
     } 

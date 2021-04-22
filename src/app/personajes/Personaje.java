@@ -1,4 +1,6 @@
 package app.personajes;
+import app.poderes.hechizos.*;
+import java.util.*;
 
 public abstract class Personaje {
     
@@ -6,6 +8,7 @@ public abstract class Personaje {
     private int salud = 100;
     private int edad;
     private int numeroDePersonaje;
+
 
     public Personaje elegirAvatar(Personaje wizard){
         return wizard;

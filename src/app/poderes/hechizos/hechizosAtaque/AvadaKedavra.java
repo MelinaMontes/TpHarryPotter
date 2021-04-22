@@ -1,4 +1,4 @@
-package app.poderes.hechizos;
+package app.poderes.hechizos.hechizosAtaque;
 
 public class AvadaKedavra extends HechizoAtaque {
 

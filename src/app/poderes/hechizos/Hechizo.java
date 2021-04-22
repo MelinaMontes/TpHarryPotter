@@ -1,4 +1,4 @@
-package poderes.hechizos;
+package app.poderes.hechizos;
 
 import app.poderes.Poder;
 
