@@ -98,7 +98,8 @@ public class App {
          Personaje atacante;
          Personaje oponente; 
          
-           if (turnoJugador1){    
+           if (turnoJugador1){ 
+               System.out.println();   
               atacante=jugador1;
               oponente=jugador2;
             }
@@ -126,33 +127,7 @@ public class App {
         
     }
 
-      /*  System.out.println(" Hora de la batalla!");
-        while (avatar1.getSalud>0 && avatar2.salud>0){
-            Personaje atacante;
-            Personaje Oponente;
-
-            if (turnoAvatar1){
-                atacante=avatar1;
-                Oponente=avatar2;
-            }
-            int max 10;
-            int min=0;
-            int danio=(int) (math.random()* (max-min)+1)) + min;
-
-            System.out.println(atacante.color + atacante.nombre + "ataca a " + oponente.nombre);
-            atacante.atacarA(oponente, danio);
-            System.out.println(" A "+oponente.nombre+ "le queda"+ oponente.salud+"de salud!" );
-
-            turnoAvatar1=!turnoAvatar1;
-
-        }
-        if (avatar1.salud > 0){
-            System.out.println(avatar1.color + avatar1.nombre + " Ha ganado esta batalla!!");
-        }
-        else{
-            System.out.println(avatar2.color + avatar2.nombre + " Es el ganador del dia!!");
-        */
-
+      
      
 
 }
