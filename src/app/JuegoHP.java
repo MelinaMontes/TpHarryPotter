@@ -175,16 +175,36 @@ public class JuegoHP {
     
     }
 
+    public Hechizo hechizoRandom(Personaje atacante){
+
+      int max = 40;
+      int min = 1;
+      if (atacante instanceof Wizard) {
+         Wizard wizard = (Wizard) atacante;
+         max = wizard.hechizos.size();
+         int random = (int) (Math.random() * ((max - min) + 1)) + min;
+         return wizard.hechizos.get(random - 1);
+      }
+      else if (atacante instanceof Elfo) {
+         Elfo elfo = (Elfo) atacante;
+         max = elfo.hechizos.size();
+         int random = (int) (Math.random() * ((max - min) + 1)) + min;
+         return elfo.hechizos.get(random - 1);
+      }     
+      return null;  
+  }
+
+
     public void turnoJugador(Personaje atacante, Personaje oponente) {
            Hechizo h = this.hechizoRandom(atacante);
            atacante.setSalud(atacante.getSalud() + h.getNivelCuracion());
-           if(atacante.getSalud()>100) {
+           if(atacante.getSalud()>= 100) {
                atacante.setSalud(100);
            }
            oponente.setSalud(oponente.getSalud() - h.getNivelDanio());
     }
 
-    public Hechizo hechizoRandom(Personaje atacante){
+    /*public Hechizo hechizoRandom(Personaje atacante){
 
         int max;
         int min = 1;
@@ -200,11 +220,11 @@ public class JuegoHP {
            int random = (int) (Math.random() * ((max - min) + 1)) + min;
            return elfo.hechizos.get(random - 1);
         }     
-        return null;  
+        return null; */ 
     }
 
 
 
-}
+
 
 
