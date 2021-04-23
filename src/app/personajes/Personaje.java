@@ -5,7 +5,7 @@ import java.util.*;
 public abstract class Personaje {
     
     private String nombre;
-    private int salud = 100;
+    private int salud;
     private int edad;
     private int numeroDePersonaje;
     public String color;

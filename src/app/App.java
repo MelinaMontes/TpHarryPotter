@@ -47,7 +47,7 @@ public class App {
 
         final String avatarElegido = "El avatar elegido es ";
 
-        System.out.println("Jugador 1, seleccione avatar: '1' Harry, '2' Voldemort, '3' Hermione, '4' Bellatrix, '5' Dobby, '6' Kreacher"); //aca irian las opciones a elegir, dependiendo de los personajes instanciados
+        System.out.println("Jugador 1, seleccione avatar: '1' Harry,  '2' Hermione,'3' Voldemort, '4' Bellatrix, '5' Dobby, '6' Kreacher"); //aca irian las opciones a elegir, dependiendo de los personajes instanciados
         int avatar1 = Teclado.nextInt();
 
         Personaje jugador1 = juego.generarWizardYElfo(avatar1);
@@ -58,7 +58,7 @@ public class App {
         Personaje jugador2;
         
         while(true){
-            System.out.println("Jugador 2, seleccione avatar: '1' Harry, '2' Voldemort, '3' Hermione, '4' Bellatrix, '5' Dobby, '6' Kreacher"); //aca irian las opciones a elegir, dependiendo de los personajes instanciados
+            System.out.println("Jugador 2, seleccione avatar: '1' Harry,  '2' Hermione,'3' Voldemort, '4' Bellatrix, '5' Dobby, '6' Kreacher"); //aca irian las opciones a elegir, dependiendo de los personajes instanciados
             avatar2 = Teclado.nextInt();
 
             if((avatar1 != avatar2)){
@@ -74,9 +74,25 @@ public class App {
         
         //Para ver si selecciono bien los personajes
        // System.out.println(jugador1.getNombre() + " " + jugador2.getNombre());
+     
 
        System.out.println(" Hora de la batalla!");
        boolean turnoJugador1 = true; 
+
+       if ( avatar1 <= 2 ){
+       System.out.println(ANSI_CYAN + jugador1.getNombre() + " llega en su saeta de fuego" + ANSI_RESET );
+    }
+       else if ( avatar1 <= 4){
+           System.out.println(ANSI_PURPLE + jugador1. getNombre() + " aparece volando envuelto en humo negro" + ANSI_RESET);
+       }
+       
+       if ( avatar2 <= 2 ){
+        System.out.println(ANSI_CYAN + jugador2.getNombre() + " llega en su saeta de fuego" + ANSI_RESET );
+     }
+        else if ( avatar2 <= 4){
+            System.out.println(ANSI_PURPLE + jugador2. getNombre() + " aparece volando envuelto en humo negro" + ANSI_RESET);
+        }
+        
 
        while (jugador1.getSalud()>0 && jugador2.getSalud()>0){
          Personaje atacante;
@@ -90,9 +106,10 @@ public class App {
              atacante=jugador2;
              oponente=jugador1;
             }
+            
+           
 
            juego.turnoJugador(atacante, oponente);
-        
            System.out.println( atacante.getNombre() + " ataca a " + oponente.getNombre());
            System.out.println(" A "+ oponente.getNombre() + " le queda "+ oponente.getSalud()+" de salud!" );
 
@@ -100,10 +117,10 @@ public class App {
            turnoJugador1 = !turnoJugador1;
         }
         if (jugador1.getSalud() > 0){
-         System.out.println(ANSI_PURPLE + jugador1.getNombre() + " Ha ganado esta batalla!!" + ANSI_RESET);
+         System.out.println(ANSI_RED + jugador1.getNombre() + " Ha ganado esta batalla!!" + ANSI_RESET);
         }
         else{
-         System.out.println(ANSI_GREEN + jugador2.getNombre() + " Es el ganador del dia!!" + ANSI_RESET);
+         System.out.println(ANSI_RED + jugador2.getNombre() + " Es el ganador del dia!!" + ANSI_RESET);
         }
 
         

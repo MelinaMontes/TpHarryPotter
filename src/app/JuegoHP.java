@@ -89,6 +89,7 @@ public class JuegoHP {
        this.inicializarJuego();
         Wizard mago = new Wizard();
         Elfo elfo = new Elfo();
+        Muggle muggle = new Muggle();
         switch(numeroDePersonaje) {       
              case 1:
 
@@ -102,10 +103,24 @@ public class JuegoHP {
               mago.aprender(cavel); */
               mago.hechizos.addAll(hechizosAprender);
                 //this.atacar();
-              mago.setNumeroDePersonaje(2);
+              mago.setNumeroDePersonaje(1);
              return mago;
-    
+             
              case 2:
+             mago.setNombre("Hermione");
+             mago.setSalud(100);
+             mago.setEdad(17);
+            /* mago.setEnergiaMagica();
+             mago.setArtefacto(varitaMagica);
+             mago.aprender(cavel);
+             mago.aprender(wing);
+             mago.aprender(accio); */
+             mago.hechizos.addAll(hechizosAprender);
+                //this.atacar();//no se que va aca
+                mago.setNumeroDePersonaje(2);
+                return mago;
+    
+             case 3:
              mago.setNombre("Voldemort");
              mago.setSalud(100);
              mago.setEdad(90);
@@ -120,21 +135,6 @@ public class JuegoHP {
                 mago.setNumeroDePersonaje(3);
                 return mago;
 
-             case 3:
-             mago.setNombre("Hermione");
-             mago.setSalud(100);
-             mago.setEdad(17);
-            /* mago.setEnergiaMagica();
-             mago.setArtefacto(varitaMagica);
-             mago.aprender(cavel);
-             mago.aprender(wing);
-             mago.aprender(accio); */
-             mago.hechizos.addAll(hechizosAprender);
-                //this.atacar();//no se que va aca
-                mago.setNumeroDePersonaje(4);
-                return mago;
-            
-
              case 4:
              mago.setNombre("Bellatrix");
              mago.setSalud(100);
@@ -147,7 +147,7 @@ public class JuegoHP {
              mago.aprender(crucio); */
              //this.atacar();
              mago.hechizos.addAll(hechizosAprender);
-             mago.setNumeroDePersonaje(1);
+             mago.setNumeroDePersonaje(4);
              return mago;
 
              case 5:
@@ -167,6 +167,12 @@ public class JuegoHP {
              elfo.setNumeroDePersonaje(6);
              elfo.hechizos.addAll(hechizosAprender);
              return elfo;
+
+            /* case 7:
+             muggle.setNombre("Maria");
+             muggle. setNumeroDePersonaje(7);
+             muggle. setSalud(70);
+             return muggle;*/
 
              default:
              return null;
@@ -190,7 +196,11 @@ public class JuegoHP {
          max = elfo.hechizos.size();
          int random = (int) (Math.random() * ((max - min) + 1)) + min;
          return elfo.hechizos.get(random - 1);
-      }     
+      }   
+      /*else if (atacante instanceof Muggle) {
+         Muggle muggle = (Muggle) atacante;
+         max =*/ 
+      
       return null;  
   }
 
@@ -204,23 +214,7 @@ public class JuegoHP {
            oponente.setSalud(oponente.getSalud() - h.getNivelDanio());
     }
 
-    /*public Hechizo hechizoRandom(Personaje atacante){
-
-        int max;
-        int min = 1;
-        if (atacante instanceof Wizard) {
-           Wizard wizard = (Wizard) atacante;
-           max = wizard.hechizos.size();
-           int random = (int) (Math.random() * ((max - min) + 1)) + min;
-           return wizard.hechizos.get(random - 1);
-        }
-        else if (atacante instanceof Elfo) {
-           Elfo elfo = (Elfo) atacante;
-           max = elfo.hechizos.size();
-           int random = (int) (Math.random() * ((max - min) + 1)) + min;
-           return elfo.hechizos.get(random - 1);
-        }     
-        return null; */ 
+    
     }
 
 
