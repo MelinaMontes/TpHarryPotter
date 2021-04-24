@@ -9,6 +9,10 @@ public class Hechizo extends Poder {
     private int nivelCuracion;
     private int energiaMagica;
 
+    public boolean esOscuro(){
+        return true;
+    }
+
     public Hechizo(String nombre, String descripcion) {
         super(nombre, descripcion);
        

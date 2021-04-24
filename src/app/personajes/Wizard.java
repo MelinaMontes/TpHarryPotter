@@ -53,20 +53,21 @@ public class Wizard extends Personaje implements IHaceMagia {
 
      @Override
      public void atacar(Personaje personaje, Hechizo hechizo) {
-          // TODO Auto-generated method stub
-          
+               /*if ((this.magoOscuro() == false ) && (hechizo.esOscuro()== true){
+                   int nivelDanio = nivelDanio * 2;
+               }
+           }*/
      }
 
 
      @Override
      public void atacar(Personaje personaje, String hechizo) {
-          // TODO Auto-generated method stub
+          
           
      }
 
      @Override
      public void setPoderInicial(Poder poderInicial) {
-          // TODO Auto-generated method stub
           
      }
 }
