@@ -161,12 +161,21 @@ public class JuegoHP {
       return null;
    }*/
 
-   public void imprimirHechizo() {
+   
+      public void imprimirHechizo() {
       int contador = 1;
-      for (Hechizo opcion : hechizosAprender) {
-         System.out.println(contador++ + ")" + opcion.getNombre());
+      //for (Hechizo opcion : hechizosAprender) {
+      for(int i = 0; i < hechizosAprender.size()/2; i++) {
+         System.out.println(contador++ + ")" + hechizosAprender.get(i).getNombre());
+         //System.out.println(contador++ + ")" + opcion.getNombre());
+         //System.out.println(models.get(i).getName());
       }
    }
+     /* int contador = 1;
+      for (Hechizo opcion : hechizosAprender) {
+         System.out.println(contador++ + ")" + opcion.getNombre());
+      */
+   
    public Hechizo getOpcionElegida() {
       System.out.println("Ingrese el nro de hechizo elegido");
       int opcion = Teclado.nextInt();
