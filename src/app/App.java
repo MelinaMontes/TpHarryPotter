@@ -1,10 +1,8 @@
 package app;
 
 import java.util.Scanner;
-import app.personajes.Elfo;
+
 import app.personajes.Personaje;
-import app.JuegoHP;
-import app.personajes.Wizard;
 
 public class App {
 
@@ -44,15 +42,21 @@ public class App {
         System.out.println("");
         System.out.println("");
 
-        System.out.println(ANSI_GREEN + "-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ *¡¡Preparen  sus  varitas!!*_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_"+ ANSI_RESET);
+        System.out.println(ANSI_YELLOW + "-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ *¡¡Preparen  sus  varitas!!*_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_"+ ANSI_RESET);
 
         System.out.println("");
 
         JuegoHP juego = new JuegoHP();
 
-        final String avatarElegido = "El avatar elegido es ";
+        final String avatarElegido = "Jugas con  ";
 
-        System.out.println(ANSI_YELLOW + "Jugador 1, seleccione avatar: '1' Harry,  '2' Hermione,'3' Voldemort, '4' Bellatrix, '5' Dobby, '6' Kreacher"+ ANSI_RESET); 
+        System.out.println(ANSI_YELLOW + "Ingresa el numero del jugador 1 "+ ANSI_RESET); 
+        System.out.println(ANSI_YELLOW + "1| Harry"+ANSI_RESET);
+        System.out.println(ANSI_YELLOW + "2|Hermione"+ANSI_RESET);
+        System.out.println(ANSI_YELLOW + "3|Voldemort"+ANSI_RESET);
+        System.out.println(ANSI_YELLOW + "4|Bellatrix"+ANSI_RESET);
+        System.out.println(ANSI_YELLOW + "5|Dobby"+ANSI_RESET);
+        System.out.println(ANSI_YELLOW + "6|Kreacher"+ANSI_RESET);
         int avatar1 = Teclado.nextInt();
 
         Personaje jugador1 = juego.generarWizardYElfo(avatar1);
@@ -63,7 +67,13 @@ public class App {
         Personaje jugador2;
 
         while (true) {
-            System.out.println(ANSI_YELLOW +  "Jugador 2, seleccione avatar: '1' Harry,  '2' Hermione,'3' Voldemort, '4' Bellatrix, '5' Dobby, '6' Kreacher"+ ANSI_RESET); 
+            System.out.println(ANSI_YELLOW + "Ingresa el numero del jugador 2 "+ ANSI_RESET); 
+        System.out.println(ANSI_YELLOW + "1| Harry"+ANSI_RESET);
+        System.out.println(ANSI_YELLOW + "2|Hermione"+ANSI_RESET);
+        System.out.println(ANSI_YELLOW + "3|Voldemort"+ANSI_RESET);
+        System.out.println(ANSI_YELLOW + "4|Bellatrix"+ANSI_RESET);
+        System.out.println(ANSI_YELLOW + "5|Dobby"+ANSI_RESET);
+        System.out.println(ANSI_YELLOW + "6|Kreacher"+ANSI_RESET);
             avatar2 = Teclado.nextInt();
 
             if ((avatar1 != avatar2)) {
@@ -71,31 +81,31 @@ public class App {
                 System.out.println(avatarElegido + jugador2.getNombre());
                 break;
             } else {
-                System.out.println(ANSI_YELLOW + "Elija otro personaje..."+ ANSI_RESET);
+                System.out.println(ANSI_YELLOW + "Elija otro jugador"+ ANSI_RESET);
             }
 
         }
 
         System.out.println("");
-        System.out.println( ANSI_RED + "Hora de la batalla!"+ ANSI_RESET);
+        System.out.println( ANSI_PURPLE + "¡ QUE EMPIECE EL DUELO !"+ ANSI_RESET);
         System.out.println("");
         boolean turnoJugador1 = true;
 
         if (avatar1 <= 2) {
-            System.out.println(ANSI_CYAN + jugador1.getNombre() + " llega en su saeta de fuego" + ANSI_RESET);
+            System.out.println(ANSI_CYAN + jugador1.getNombre() + " ESTÁ LLEGANDO EN SU SAETA DE FUEGO " + ANSI_RESET);
             System.out.println("");
         } else if (avatar1 <= 4) {
             System.out.println(
-                    ANSI_PURPLE + jugador1.getNombre() + " aparece volando envuelto en humo negro" + ANSI_RESET);
+                    ANSI_PURPLE + jugador1.getNombre() + " HA VENIDO DESDE EL OSCURO MAS ALLÁ" + ANSI_RESET);
             System.out.println("");
         }
 
         if (avatar2 <= 2) {
-            System.out.println(ANSI_CYAN + jugador2.getNombre() + " llega en su saeta de fuego" + ANSI_RESET);
+            System.out.println(ANSI_CYAN + jugador2.getNombre() + "VIENE A TODA VELOCIDAD EN EL EXPRESSO HOGWARDS" + ANSI_RESET);
             System.out.println("");
         } else if (avatar2 <= 4) {
             System.out.println(
-                    ANSI_PURPLE + jugador2.getNombre() + " aparece volando envuelto en humo negro" + ANSI_RESET);
+                    ANSI_PURPLE + jugador2.getNombre() + " APARECE ENVUELTO EN HUMO NEGRO" + ANSI_RESET);
             System.out.println("");
         }
 

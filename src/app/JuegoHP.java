@@ -14,6 +14,9 @@ import app.poderes.hechizos.hechizosOcio.*;
 import app.transportes.*;
 
 public class JuegoHP {
+   public static final String ANSI_RESET = "\u001B[0m";
+   public static final String ANSI_GREEN = "\u001B[32m";
+
    Scanner Teclado = new Scanner(System.in);
    public List<Personaje> personajes = new ArrayList<>();
    public List<Hechizo> hechizosAprender = new ArrayList<>();
@@ -22,9 +25,9 @@ public class JuegoHP {
 
    public void inicializarJuego() {
 
-      Poder metamorfosis = new Metamorfosis("Metamorfosis", "Puede cambiar de forma");
-      Poder invisibilidad = new Invisibilidad("Invisibilidad", "Nadie puede verlo");
-      Poder parseTongue = new ParseTongue("Parsel Tongue", "Puede hablar con Serpientes");
+      new Metamorfosis("Metamorfosis", "Puede cambiar de forma");
+      new Invisibilidad("Invisibilidad", "Nadie puede verlo");
+      new ParseTongue("Parsel Tongue", "Puede hablar con Serpientes");
 
       SectumSempra ss = new SectumSempra("Sectum Sempra", "Potente Hechizo de Ataque");
       ss.energiaYDanio(35, 40);
@@ -71,7 +74,6 @@ public class JuegoHP {
       varitaMagica.setNombre("Varita Magica");
       varitaMagica.setAmplificadorDeDanio(1);
       varitaMagica.setAmplificadorDeCuracion(0.5);
-      // varitaMagica.setPoder(hechizo); //no se bien que va aca, es de tipo poder
       this.artefactos.add(varitaMagica);
 
       Transporte escobaHarry = new Escoba();
@@ -90,7 +92,7 @@ public class JuegoHP {
          mago.setNombre("Harry");
          mago.setSalud(100);
          mago.setEdad(17);
-         //mago.hechizos.addAll(hechizosAprender);
+
          mago.setNumeroDePersonaje(1);
          return mago;
 
@@ -98,7 +100,7 @@ public class JuegoHP {
          mago.setNombre("Hermione");
          mago.setSalud(100);
          mago.setEdad(17);
-        // mago.hechizos.addAll(hechizosAprender);
+
          mago.setNumeroDePersonaje(2);
          return mago;
 
@@ -106,7 +108,7 @@ public class JuegoHP {
          mago.setNombre("Voldemort");
          mago.setSalud(100);
          mago.setEdad(90);
-         //mago.hechizos.addAll(hechizosAprender);
+
          mago.setNumeroDePersonaje(3);
          mago.magoOscuro();
          return mago;
@@ -115,7 +117,7 @@ public class JuegoHP {
          mago.setNombre("Bellatrix");
          mago.setSalud(100);
          mago.setEdad(40);
-        // mago.hechizos.addAll(hechizosAprender);
+
          mago.setNumeroDePersonaje(4);
          mago.magoOscuro();
          return mago;
@@ -123,7 +125,7 @@ public class JuegoHP {
       case 5:
          elfo.setNombre("Dobby");
          elfo.setSalud(80);
-        // elfo.hechizos.addAll(hechizosAprender);
+
          elfo.setNumeroDePersonaje(5);
          return elfo;
 
@@ -131,10 +133,9 @@ public class JuegoHP {
          elfo.setNombre("Kreacher");
          elfo.setSalud(80);
          elfo.setNumeroDePersonaje(6);
-         //elfo.hechizos.addAll(hechizosAprender);
+
          return elfo;
 
-   
       default:
          return null;
 
@@ -142,48 +143,26 @@ public class JuegoHP {
 
    }
 
-   /*public Hechizo hechizoRandom(Personaje atacante) {
+   public void imprimirHechizo() {
 
-      int max = 40;
-      int min = 1;
-      if (atacante instanceof Wizard) {
-         Wizard wizard = (Wizard) atacante;
-         max = wizard.hechizos.size();
-         int random = (int) (Math.random() * ((max - min) + 1)) + min;
-         return wizard.hechizos.get(random - 1);
-      } else if (atacante instanceof Elfo) {
-         Elfo elfo = (Elfo) atacante;
-         max = elfo.hechizos.size();
-         int random = (int) (Math.random() * ((max - min) + 1)) + min;
-         return elfo.hechizos.get(random - 1);
-      }
-      
-      return null;
-   }*/
-
-   
-      public void imprimirHechizo() {
+      System.out.println(ANSI_GREEN + "Ingrese el hechizo elegido" + ANSI_RESET);
       int contador = 1;
-      //for (Hechizo opcion : hechizosAprender) {
-      for(int i = 0; i < hechizosAprender.size()/2; i++) {
+
+      for (int i = 0; i < hechizosAprender.size() / 2; i++) {
          System.out.println(contador++ + ")" + hechizosAprender.get(i).getNombre());
-         //System.out.println(contador++ + ")" + opcion.getNombre());
-         //System.out.println(models.get(i).getName());
+
       }
    }
-     /* int contador = 1;
-      for (Hechizo opcion : hechizosAprender) {
-         System.out.println(contador++ + ")" + opcion.getNombre());
-      */
-   
+
    public Hechizo getOpcionElegida() {
-      System.out.println("Ingrese el nro de hechizo elegido");
+
       int opcion = Teclado.nextInt();
       Hechizo hechizo = hechizosAprender.get(opcion - 1);
       Teclado.nextLine();
       return hechizo;
 
    }
+
    public void turnoJugador(Personaje atacante, Personaje oponente) {
       this.imprimirHechizo();
       Hechizo hechizo = this.getOpcionElegida();
@@ -194,19 +173,4 @@ public class JuegoHP {
       oponente.setSalud(oponente.getSalud() - hechizo.getNivelDanio());
    }
 
-   /*public void imprimirHechizo() {
-      int contador = 1;
-      for (Hechizo opcion : hechizosAprender) {
-         System.out.println(contador++ + ")" + opcion.getNombre());
-      }
-   }*/
-
-   /*public Hechizo getOpcionElegida() {
-      System.out.println("Ingrese el nro de hechizo elegido");
-      int opcion = Teclado.nextInt();
-      Hechizo hechizo = hechizosAprender.get(opcion - 1);
-      Teclado.nextLine();
-      return hechizo;
-
-   }*/
 }

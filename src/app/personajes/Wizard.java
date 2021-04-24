@@ -1,17 +1,13 @@
 package app.personajes;
-import java.util.*;
-import app.*;
+import java.util.ArrayList;
+import java.util.List;
+
 import app.artefactos.Artefacto;
-import app.poderes.*;
-import app.poderes.hechizos.Hechizo;
-import app.transportes.Escoba;
 import app.interfaces.IHaceMagia;
+import app.poderes.Poder;
+import app.poderes.hechizos.Hechizo;
 
 public class Wizard extends Personaje implements IHaceMagia {
-     private int energiaMagica = 150;
-     private Escoba escoba;
-     private Poder poderInicial;
-     private Artefacto artefacto;
      public List<Hechizo> hechizos = new ArrayList<>(); 
 
      public boolean magoOscuro(){
@@ -23,7 +19,7 @@ public class Wizard extends Personaje implements IHaceMagia {
           return 0;
      }
 
-     @Override //esto es necesario si ya establecimos arriba que todos los wizard tienen energia magica 150??
+     @Override 
      public void setEnergiaMagica(int energiaMagica) {
    
      }
@@ -39,7 +35,7 @@ public class Wizard extends Personaje implements IHaceMagia {
      public Artefacto getArtefacto() {
           return null;
      }
-     public Artefacto setArtefacto(Artefacto artefacto){//ver si esto esta bien
+     public Artefacto setArtefacto(Artefacto artefacto){
          return artefacto;
      }
 
