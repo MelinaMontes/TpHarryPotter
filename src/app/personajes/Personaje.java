@@ -8,7 +8,6 @@ public abstract class Personaje {
     private int salud;
     private int edad;
     private int numeroDePersonaje;
-    public String color;
 
 
     public Personaje elegirAvatar(Personaje wizard){

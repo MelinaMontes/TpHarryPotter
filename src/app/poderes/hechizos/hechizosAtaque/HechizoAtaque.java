@@ -8,14 +8,7 @@ public abstract class HechizoAtaque extends Hechizo {
         super(nombrePoder, descripcionDelPoder);
     }
 
-  /*  private int energiaMagicaMinima;
-    public int getEnergiaMagicaMinima() {
-        return this.energiaMagicaMinima;
-    }
-    public void setEnergiaMagicaMinima(int energiaMagicaMinima) {
-        this.energiaMagicaMinima = energiaMagicaMinima;
-    }
-*/
+ 
     
 
 }

@@ -1,5 +1,7 @@
 package app.artefactos;
 import app.poderes.Poder;
+
+
 public abstract class Artefacto {
 
     private String nombre;

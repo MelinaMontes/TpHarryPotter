@@ -30,7 +30,6 @@ public class Wizard extends Personaje implements IHaceMagia {
      }
 
     
-
      @Override
      public Artefacto getArtefacto() {
           return null;
@@ -39,13 +38,11 @@ public class Wizard extends Personaje implements IHaceMagia {
          return artefacto;
      }
 
-
      @Override
      public void aprender(Hechizo h) {
           this.hechizos.add(h);
           
      }
-
 
      @Override
      public void atacar(Personaje personaje, Hechizo hechizo) {
@@ -57,8 +54,7 @@ public class Wizard extends Personaje implements IHaceMagia {
 
 
      @Override
-     public void atacar(Personaje personaje, String hechizo) {
-          
+     public void atacar(Personaje personaje, String hechizo) {    
           
      }
 

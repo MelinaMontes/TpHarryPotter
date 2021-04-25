@@ -1,5 +1,4 @@
 package app.personajes;
-
 import java.util.ArrayList;
 import java.util.List;
 import app.interfaces.IHaceMagia;
