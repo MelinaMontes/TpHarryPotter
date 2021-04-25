@@ -86,7 +86,6 @@ public class JuegoHP {
          mago.setNombre("Harry");
          mago.setSalud(100);
          mago.setEdad(17);
-         //mago.hechizos.addAll(hechizosAprender);
          mago.setNumeroDePersonaje(1);
          return mago;
 
@@ -94,7 +93,6 @@ public class JuegoHP {
          mago.setNombre("Hermione");
          mago.setSalud(100);
          mago.setEdad(17);
-        // mago.hechizos.addAll(hechizosAprender);
          mago.setNumeroDePersonaje(2);
          return mago;
 
@@ -102,7 +100,6 @@ public class JuegoHP {
          mago.setNombre("Voldemort");
          mago.setSalud(100);
          mago.setEdad(90);
-         //mago.hechizos.addAll(hechizosAprender);
          mago.setNumeroDePersonaje(3);
          mago.magoOscuro();
          return mago;
@@ -111,7 +108,6 @@ public class JuegoHP {
          mago.setNombre("Bellatrix");
          mago.setSalud(100);
          mago.setEdad(40);
-        // mago.hechizos.addAll(hechizosAprender);
          mago.setNumeroDePersonaje(4);
          mago.magoOscuro();
          return mago;
@@ -119,7 +115,6 @@ public class JuegoHP {
       case 5:
          elfo.setNombre("Dobby");
          elfo.setSalud(80);
-        // elfo.hechizos.addAll(hechizosAprender);
          elfo.setNumeroDePersonaje(5);
          return elfo;
 
@@ -127,7 +122,6 @@ public class JuegoHP {
          elfo.setNombre("Kreacher");
          elfo.setSalud(80);
          elfo.setNumeroDePersonaje(6);
-         //elfo.hechizos.addAll(hechizosAprender);
          return elfo;
 
    
@@ -138,29 +132,11 @@ public class JuegoHP {
 
    }
 
-   /*public Hechizo hechizoRandom(Personaje atacante) {
-
-      int max = 40;
-      int min = 1;
-      if (atacante instanceof Wizard) {
-         Wizard wizard = (Wizard) atacante;
-         max = wizard.hechizos.size();
-         int random = (int) (Math.random() * ((max - min) + 1)) + min;
-         return wizard.hechizos.get(random - 1);
-      } else if (atacante instanceof Elfo) {
-         Elfo elfo = (Elfo) atacante;
-         max = elfo.hechizos.size();
-         int random = (int) (Math.random() * ((max - min) + 1)) + min;
-         return elfo.hechizos.get(random - 1);
-      }
-      
-      return null;
-   }*/
 
    public void imprimirHechizo() {
       int contador = 1;
-      for (Hechizo opcion : hechizosAprender) {
-         System.out.println(contador++ + ")" + opcion.getNombre());
+      for ( int i = 0; i < hechizosAprender.size()/2; i ++) {
+         System.out.println(contador++ + ")" + hechizosAprender.get(i).getNombre());
       }
    }
    public Hechizo getOpcionElegida() {
@@ -181,19 +157,5 @@ public class JuegoHP {
       oponente.setSalud(oponente.getSalud() - hechizo.getNivelDanio());
    }
 
-   /*public void imprimirHechizo() {
-      int contador = 1;
-      for (Hechizo opcion : hechizosAprender) {
-         System.out.println(contador++ + ")" + opcion.getNombre());
-      }
-   }*/
-
-   /*public Hechizo getOpcionElegida() {
-      System.out.println("Ingrese el nro de hechizo elegido");
-      int opcion = Teclado.nextInt();
-      Hechizo hechizo = hechizosAprender.get(opcion - 1);
-      Teclado.nextLine();
-      return hechizo;
-
-   }*/
+   
 }

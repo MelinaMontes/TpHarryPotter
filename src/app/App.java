@@ -43,7 +43,8 @@ public class App {
 
         final String avatarElegido = "Jugas con  ";
 
-        System.out.println(ANSI_YELLOW + "Ingresa el numero del jugador 1 "+ ANSI_RESET); 
+        System.out.println(ANSI_YELLOW + "Ingresa el numero del jugador 1 "+ ANSI_RESET);
+        System.out.println(""); 
         System.out.println(ANSI_YELLOW + "1| Harry"+ANSI_RESET);
         System.out.println(ANSI_YELLOW + "2|Hermione"+ANSI_RESET);
         System.out.println(ANSI_YELLOW + "3|Voldemort"+ANSI_RESET);
@@ -55,12 +56,13 @@ public class App {
         Personaje jugador1 = juego.generarWizardYElfo(avatar1);
         System.out.println(avatarElegido + jugador1.getNombre());
 
-        // elije personaje2 sin repetir
+        
         int avatar2;
         Personaje jugador2;
 
         while (true) {
-            System.out.println(ANSI_YELLOW + "Ingresa el numero del jugador 2 "+ ANSI_RESET); 
+        System.out.println(ANSI_YELLOW + "Ingresa el numero del jugador 2 "+ ANSI_RESET); 
+        System.out.println("");
         System.out.println(ANSI_YELLOW + "1| Harry"+ANSI_RESET);
         System.out.println(ANSI_YELLOW + "2|Hermione"+ANSI_RESET);
         System.out.println(ANSI_YELLOW + "3|Voldemort"+ANSI_RESET);
@@ -74,13 +76,15 @@ public class App {
                 System.out.println(avatarElegido + jugador2.getNombre());
                 break;
             } else {
-                System.out.println(ANSI_YELLOW + "Elija otro jugador"+ ANSI_RESET);
+                System.out.println("");
+                System.out.println(ANSI_YELLOW + " Elija otro jugador"+ ANSI_RESET);
+                System.out.println("");
             }
 
         }
 
         System.out.println("");
-        System.out.println( ANSI_PURPLE + "¡ QUE EMPIECE EL DUELO !"+ ANSI_RESET);
+        System.out.println( ANSI_RED + "¡ QUE EMPIECE EL DUELO !"+ ANSI_RESET);
         System.out.println("");
         boolean turnoJugador1 = true;
 
@@ -88,17 +92,15 @@ public class App {
             System.out.println(ANSI_CYAN + jugador1.getNombre() + " ESTÁ LLEGANDO EN SU SAETA DE FUEGO " + ANSI_RESET);
             System.out.println("");
         } else if (avatar1 <= 4) {
-            System.out.println(
-                    ANSI_PURPLE + jugador1.getNombre() + " HA VENIDO DESDE EL OSCURO MAS ALLÁ" + ANSI_RESET);
+            System.out.println( ANSI_CYAN + jugador1.getNombre() + " APARECE ENVUELTO EN HUMO NEGRO" + ANSI_RESET);
             System.out.println("");
         }
 
         if (avatar2 <= 2) {
-            System.out.println(ANSI_CYAN + jugador2.getNombre() + "VIENE A TODA VELOCIDAD EN EL EXPRESSO HOGWARDS" + ANSI_RESET);
+            System.out.println(ANSI_PURPLE + jugador2.getNombre() + " VIENE A TODA VELOCIDAD EN EL EXPRESSO HOGWARDS" + ANSI_RESET);
             System.out.println("");
         } else if (avatar2 <= 4) {
-            System.out.println(
-                    ANSI_PURPLE + jugador2.getNombre() + " APARECE ENVUELTO EN HUMO NEGRO" + ANSI_RESET);
+            System.out.println(ANSI_PURPLE + jugador2.getNombre() + " APARECE ENVUELTO EN HUMO NEGRO" + ANSI_RESET);
             System.out.println("");
         }
 
@@ -129,7 +131,7 @@ public class App {
         } else {
             System.out.println(ANSI_RED + jugador2.getNombre() + " Es el ganador del dia!!" + ANSI_RESET);
         }
-
+        System.out.println("");
         System.out.println(ANSI_YELLOW + "Gracias por Jugar :)");
     }
 
